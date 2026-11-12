@@ -1,0 +1,123 @@
+/* ==========================================================================
+   ESCALA DE LECTURA — Robledillo & Herrera Abogados
+   Se carga la ultima en todas las paginas: prevalece sobre los estilos propios.
+   Movil: lectura 17 px, bloques 16 px.  Escritorio (>=768 px): 18 px / 17 px.
+   Por debajo de 16 px solo quedan etiquetas en versales, insignias, migas y
+   textos legales del pie, nunca texto de lectura.
+   ========================================================================== */
+:root {
+  --fs-lead: 1.125rem;      /* 18 */
+  --fs-lectura: 1.0625rem;  /* 17 */
+  --fs-bloque: 1rem;        /* 16 */
+  --fs-nota: 0.9375rem;     /* 15 */
+  --fs-titulo: 1.125rem;    /* 18 */
+  --fs-h3: 1.25rem;         /* 20 */
+  --fs-etiqueta: 0.8125rem; /* 13 */
+}
+@media (min-width: 768px) {
+  :root {
+    --fs-lead: 1.25rem;       /* 20 */
+    --fs-lectura: 1.125rem;   /* 18 */
+    --fs-bloque: 1.0625rem;   /* 17 */
+    --fs-nota: 1rem;          /* 16 */
+    --fs-titulo: 1.1875rem;   /* 19 */
+    --fs-h3: 1.375rem;        /* 22 */
+    --fs-etiqueta: 0.875rem;  /* 14 */
+  }
+}
+
+/* 1. Lectura principal: parrafos y listas del contenido */
+body main p, body main li, body main dd, body main blockquote { font-size: var(--fs-lectura); }
+body .content-col p, body .content-col li, body .content-col dd,
+body .legal-content p, body .legal-content li, body .legal-doc p, body .legal-doc li,
+body .intro-copy, body .intro-copy p,
+body .faq-body, body .faq-body p, body .faq-body li,
+body .informacion-tecnica-juridica p, body .informacion-tecnica-juridica li,
+body .delito-lead, body .delito-cierre, body .section-intro,
+body #servicios-relacionados > .container-rh > p { font-size: var(--fs-lectura); }
+
+/* 2. Entradillas */
+body .hero-sub, body .fernando-lead { font-size: var(--fs-lead); }
+
+/* 3. Encabezados h3 del contenido (las tarjetas se ajustan en el punto 5) */
+body .content-col h3 { font-size: var(--fs-h3); }
+
+/* 4. Texto dentro de bloques: tarjetas, tablas, barras laterales, resumenes */
+body .servicio-card p, body .servicio-card li, body .card-features li, body .card-desc,
+body .resumen-tldr li, body .caso-item, body .caso-item span,
+body .dark-card-content p, body .ganar-item span, body .valor-card p,
+body .paso-content p, body .monitorio-step span, body .fiscal-andalucia p,
+body .filtro-block p, body .pilar-card p, body .protocol-step span, body .razon-item p,
+body .step-desc, body .rentabilidad-block p, body .sidebar-cta-widget p,
+body .local-seo-strip p, body .sidebar-precio-widget p, body .honorario-item,
+body .sidebar-abogado-body p, body .llegar-item span, body .vicios-content p,
+body .location-data-list li, body .tarifa-content p, body .urgencias-text p,
+body .sidebar-urgencia p, body .abogado-data-list li, body .plazos-cta,
+body .hero-objecion, body .delito-lista li, body #servicios-relacionados div > p,
+body .page-reviewed-by, body .autor-caja p, body .indice-contenidos li,
+body .tabla-datos td, body .tabla-datos tbody th, body .legal-doc .table td, body .legal-doc .table th,
+body .col-xl-5 p, body .horario-item, body .paso-texto, body .abogado-card-body p,
+body .sticky-cta p, body .compare-table td, body .interlink-item, body .sidebar-info p,
+body .step-desc p, body .que-pasa p { font-size: var(--fs-bloque); }
+
+/* 5. Titulos de tarjetas y bloques */
+body .servicio-card h3, body .delito-item h3, body .valor-card h3, body .paso-content h3,
+body .razon-item h3, body .pilar-card h3, body .vicios-content h3, body .tarifa-content h2,
+body .tarifa-content h3, body .sidebar-abogado-body h3, body .monitorio-block h3,
+body .consulta-alerta h3 { font-size: var(--fs-titulo); }
+
+/* 6. Preguntas frecuentes */
+body details.faq-item summary { font-size: var(--fs-lectura); }
+
+/* 7. Notas y textos de apoyo */
+body .tabla-nota, body .map-consent__text,
+body .cookie-banner__text, body .legal-doc .text-muted,
+body .card-price span, body .hero-urgencia-nota, body .org-tag, body .zona-tag,
+body .trust-sub, body .manifiesto-author { font-size: var(--fs-nota); }
+
+/* 8. Botones y llamadas a la accion */
+body .btn-hero-primary, body .btn-hero-secondary, body .btn-secundario-hero,
+body .btn-sidebar-cta, body .btn-sidebar-whatsapp, body .btn-consulta, body .btn-maps,
+body .map-consent__btn, body .map-consent__link, body .cookie-banner__btn,
+body .btn-urgencia-inline, body .btn-hero-urgencia, body .dark-card-link,
+body .btn-sidebar-urgencia, body .int-link { font-size: 1rem; }
+
+/* 9. Etiquetas en versales (tamano de rotulo, no de lectura) */
+body .tabla-titulo, body .indice-titulo, body .resumen-titulo, body .sidebar-casos h3,
+body .sidebar-precio-widget h4, body .sidebar-honorarios h3, body .filtro-block h3,
+body .admin-organismos h3, body .como-llegar h3, body .que-pasa h3, body .hero-eyebrow,
+body .fernando-eyebrow, body .section-label, body .plazo-label, body .canal-label,
+body .tabla-datos thead th, body .card-tagline, body .urgencia-label,
+body .interlinking-civil h3 { font-size: var(--fs-etiqueta); }
+
+/* 10. Insignias y datos de colegiacion */
+body .servicio-badge, body .canal-badge, body .fiscal-badge, body .tag-mutuo,
+body .tag-contencioso { font-size: 0.75rem; }
+body .abogado-colegial { font-size: 0.875rem; }
+
+/* 11. Migas de pan */
+body .breadcrumb-list { font-size: 0.875rem; }
+
+/* 12. Pie de pagina */
+body .footer-area p, body .footer-area li, body .footer-area li a { font-size: 16px !important; }
+body .footer-area .footer-legal { font-size: 0.875rem; }
+
+/* 13. Barra movil fija de contacto */
+body .cta-sticky-mobile .cta-btn { font-size: 0.875rem; }
+@media (max-width: 400px) { body .cta-sticky-mobile .cta-btn { font-size: 0.8125rem; } }
+@media (max-width: 345px) { body .cta-sticky-mobile .cta-btn { font-size: 0.75rem; } }
+
+/* 14. Reglas de pagina mas especificas que hay que igualar */
+body .delitos-band .delito-item p, body .delito-item p.delito-lead, body .delito-item p.delito-cierre,
+body .delitos-band .delitos-nota, body .plazos-block .plazos-cta, body .faq-section-sub,
+body .plazo-desc, body .canal-desc { font-size: var(--fs-bloque); }
+body .sidebar-urgencia .urgencia-label { font-size: var(--fs-etiqueta); }
+body .footer-area p a { font-size: inherit; }
+body .sidebar-urgencia .despacho-num, body .sidebar-urgencia .despacho-num a { font-size: var(--fs-bloque); }
+body .detencion-protocol h2 { font-size: var(--fs-h3); }
+body .rentabilidad-block h2, body .como-ganamos h2, body .plazos-block h2 { font-size: var(--fs-h3); }
+body .guia-divorcio-inner h3, body .fiscal-andalucia h2 { font-size: var(--fs-h3); }
+
+/* 15. Titulares y botones que no deben salirse de su caja */
+body .hero-h1 { white-space: normal; text-wrap: balance; }
+@media (max-width: 380px) { body .btn-urgencia { white-space: normal; text-align: center; padding-left: 16px; padding-right: 16px; } }

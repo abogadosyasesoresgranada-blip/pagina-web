@@ -1,0 +1,169 @@
+# --- CONFIGURACIÓN DE RENDIMIENTO, SEO Y SEGURIDAD ---
+RewriteEngine On
+
+# 0) Canonización de HOST + HTTPS (un único dominio, siempre en https)
+# 0a) Host: cualquier variante (www, etc.) -> dominio canónico, sea cual sea el protocolo
+RewriteCond %{HTTP_HOST} !^abogadosyasesoresgranada\.es$ [NC]
+RewriteRule ^ https://abogadosyasesoresgranada.es%{REQUEST_URI} [R=301,L]
+# 0b) Protocolo: http -> https (respeta proxies/CDN que terminan TLS y envían X-Forwarded-Proto)
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^ https://abogadosyasesoresgranada.es%{REQUEST_URI} [R=301,L]
+
+# 1) Anti-duplicidad Home (/index.html -> /)
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# 1.1) Redirecciones 301 de URLs antiguas -> nuevas (Plan anti-canibalización)
+#      *** MANTENER de forma permanente: conservan la autoridad de los enlaces
+#          externos y de los marcadores que aún apuntan a las URLs antiguas. ***
+#      Si algún día decides eliminarlas, borra SOLO estas líneas RewriteRule.
+#      (La antigua regla abogado-de-familia-granada.html -> abogados-... se ha eliminado:
+#       desde oct-2026 esa URL en singular vuelve a ser la definitiva.)
+RewriteRule ^delitos-salud-publica\.html$       /abogado-penalista-granada.html [R=301,L]
+RewriteRule ^reclamaciones-bancarias\.html$     /abogado-civil.html [R=301,L]
+# (oct-2026) Accidentes de tráfico: el 301 a la home se sustituye por 410 Gone.
+# Un 301 a una página que no trata la materia traslada su relevancia al destino
+# y Google tiende a tratarlo como soft 404: la URL seguía indexada y arrastraba
+# consultas de accidentes de tráfico hacia la home. El 410 pide la retirada.
+RewriteRule ^abogado-accidentes-trafico\.html$  - [G,L]
+RewriteRule ^abogado-divorcio-granada\.html$    /abogado-de-familia-granada.html#divorcio [NE,R=301,L]
+RewriteRule ^abogado-herencias\.html$           /abogado-herencias-granada.html [R=301,L]
+# (oct-2026) Entrada de blog retirada. 301 y no 410: la materia (conflictos
+#            entre vecinos, propiedad horizontal, lindes y danos por obras del
+#            vecino) SI se sigue llevando y esta tratada en abogado-civil.html,
+#            asi que el destino trata de verdad el tema y no es un soft 404.
+RewriteRule ^blog-conflicto-vecinos\.html$     /abogado-civil.html#conflictos-vecinales [NE,R=301,L]
+
+# 1.4) HIPERESPECIALIZACIÓN (ago-2026, revisado oct-2026): materias descartadas.
+#      Accidentes de tráfico (reclamación civil de indemnizaciones) y derecho
+#      bancario dejan de ofrecerse. Los delitos de tráfico (alcoholemia,
+#      conducción temeraria, atropellos) y los delitos contra la salud pública
+#      SÍ se siguen llevando: están en abogado-penalista-granada.html.
+#      410 para lo retirado, 301 solo donde el destino trata de verdad la materia.
+RewriteRule ^abogados-accidentes-trafico-granada\.html$   - [G,L]
+RewriteRule ^abogados-derecho-bancario-en-granada\.html$  /abogado-civil.html [R=301,L]
+RewriteRule ^abogado-trafico-de-drogas\.html$             /abogado-penalista-granada.html [R=301,L]
+
+# 1.2) FUSIÓN anti-canibalización: Divorcio absorbido por Familia (jul-2026)
+#      La página de divorcio se ha integrado como sección dentro de Familia.
+#      301 permanente para conservar autoridad y no dejar 404.
+RewriteRule ^abogados-divorcio-granada\.html$   /abogado-de-familia-granada.html#divorcio [NE,R=301,L]
+
+# 1.5) URLs en SINGULAR (oct-2026): abogado de familia / herencias / administrativo
+#      Las URLs en plural pasan a redirigir a su versión en singular.
+#      *** MANTENER de forma permanente. ***
+RewriteRule ^abogados-de-familia-granada\.html$      /abogado-de-familia-granada.html [R=301,L]
+RewriteRule ^abogados-herencias-granada\.html$       /abogado-herencias-granada.html [R=301,L]
+RewriteRule ^abogados-derecho-administrativo\.html$  /abogado-derecho-administrativo.html [R=301,L]
+
+# 1.6) URLs de la WEB ANTIGUA (WordPress, marca «F&F Abogados», Avda. de la Constitución)
+#      Google aún las tiene indexadas con la dirección antigua. 301 a sus equivalentes.
+#      *** MANTENER de forma permanente. ***
+RewriteRule ^contacto/?$            /contacto.html [R=301,L]
+RewriteRule ^abogados-en-granada/?$ / [R=301,L]
+
+# 1.3) BLOQUEO DE DOCUMENTOS JUDICIALES CONFIDENCIALES (/pdf/)
+#      Corta el acceso HTTP directo a TODO el directorio /pdf/ (devuelve 410 Gone (retirada permanente)).
+#      Protege el secreto profesional y la privacidad (RGPD) de los intervinientes.
+#      IMPORTANTE: /pdf/ se deja FUERA de robots.txt a propósito. Así Google puede
+#      recrastrear, recibir el 410 y retirar de su índice los PDF ya indexados.
+#      (Un 'Disallow' en robots.txt impediría el recrastreo y NO desindexaría;
+#       además, publicaría la ruta sensible.)
+RewriteRule ^pdf/ - [G,L]
+
+# --- ENDURECIMIENTO / SEGURIDAD DE ARCHIVOS ---
+# Evita el listado de directorios (/assets/, /pdf/, etc.)
+Options -Indexes
+# Charset por defecto coherente con el contenido (UTF-8 a nivel HTTP)
+AddDefaultCharset utf-8
+
+# Bloquea el acceso directo a ficheros sensibles y copias de seguridad
+<FilesMatch "(^\.ht|\.(bak|old|orig|save|swp|log|sql|ini)$|~$)">
+    Require all denied
+</FilesMatch>
+
+# --- SEGURIDAD (Cabeceras HTTP) ---
+<IfModule mod_headers.c>
+    # Fuerza HTTPS (HSTS) — 'preload' requiere darse de alta en hstspreload.org
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    # Previene MIME-Sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    # Previene Clickjacking (evita que la web cargue en iframes externos)
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # Política de Referrer para privacidad
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Restringe APIs del navegador que esta web no utiliza
+    Header always set Permissions-Policy "camera=(), microphone=(), payment=(), usb=()"
+</IfModule>
+
+# --- DECLARACIÓN DE MIME TYPES ---
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType font/woff2 .woff2
+    AddType font/woff .woff
+</IfModule>
+
+# 2) COMPRESIÓN — Brotli primero, Gzip de fallback
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css
+    AddOutputFilterByType BROTLI_COMPRESS text/javascript application/javascript application/json
+    AddOutputFilterByType BROTLI_COMPRESS application/xml image/svg+xml image/x-icon
+</IfModule>
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE text/javascript application/javascript application/json
+    AddOutputFilterByType DEFLATE application/xml image/svg+xml image/x-icon
+</IfModule>
+
+# Vary header para proxies y CDN
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|html|woff2|woff)$">
+        Header append Vary Accept-Encoding
+    </FilesMatch>
+</IfModule>
+
+# 3) CACHÉ DE NAVEGADOR (Expiración) — solo recursos estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Imágenes — 1 año
+    ExpiresByType image/jpg   "access plus 1 year"
+    ExpiresByType image/jpeg  "access plus 1 year"
+    ExpiresByType image/gif   "access plus 1 year"
+    ExpiresByType image/png   "access plus 1 year"
+    ExpiresByType image/webp  "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # CSS/JS — 6 meses (el versionado ?v= fuerza la recarga si hay cambios)
+    ExpiresByType text/css                "access plus 6 months"
+    ExpiresByType application/javascript  "access plus 6 months"
+    ExpiresByType text/javascript         "access plus 6 months"
+
+    # Fuentes — 1 año (no cambian nunca)
+    ExpiresByType font/woff2  "access plus 1 year"
+    ExpiresByType font/woff   "access plus 1 year"
+    ExpiresByType font/ttf    "access plus 1 year"
+    ExpiresByType font/eot    "access plus 1 year"
+</IfModule>
+
+# 4) Cache-Control con immutable para assets; HTML siempre revalidado
+<IfModule mod_headers.c>
+    # CSS y JS
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=15552000, immutable"
+    </FilesMatch>
+    # Fuentes
+    <FilesMatch "\.(woff2|woff|ttf|eot)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    # Multimedia
+    <FilesMatch "\.(webp|jpg|jpeg|png|gif|svg|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    # HTML: siempre fresco, pero permitiendo revalidación 304 (sin 'no-store')
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>

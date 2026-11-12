@@ -1,0 +1,58 @@
+# ==========================================
+# ROBOTS.TXT - Robledillo & Herrera Abogados
+# Estrategia: VISIBILIDAD EN BUSCADORES + RESPUESTAS DE IA
+#   - Buscadores (Google, Bing...): acceso normal.
+#   - IA que RESPONDE Y CITA (ChatGPT, Gemini, Claude, Perplexity,
+#     Meta AI, Apple, Alexa): acceso permitido. Decisión: la visibilidad
+#     y las visitas que traen sus citas compensan que entrenen con el
+#     contenido publico del sitio.
+#   - Scrapers comerciales que NI citan NI enlazan (revendedores de
+#     datos): bloqueados. No aportan visitas; solo consumen.
+# NOTA: robots.txt es una norma de cortesia. La respetan los bots
+#   serios; no frena a actores maliciosos. El material confidencial
+#   se protege retirandolo del servidor (hecho), no aqui.
+# ==========================================
+
+# ------- Regla general (buscadores e IA que cita) -------
+User-agent: *
+Disallow: /admin/
+Disallow: /assets/php/
+# NOTA: /pdf/ sin Disallow a proposito: los archivos ya no existen y el
+# servidor responde 410. Google debe poder rastrear esas URLs para VER
+# el 410 y retirarlas del indice.
+
+# ==========================================
+# SCRAPERS COMERCIALES SIN CITA (bloqueados)
+# Revendedores de datos y rastreadores agresivos que no generan
+# trafico ni menciones hacia el sitio.
+# ==========================================
+
+# NOTA (oct-2026): CCBot (Common Crawl) se permite a proposito. No revende
+# datos: es el archivo abierto de la web con el que se entrenan muchos
+# modelos de IA, y bloquearlo resta presencia en sus respuestas.
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: cohere-training-data-crawler
+Disallow: /
+
+# ==========================================
+# SITEMAP
+# ==========================================
+Sitemap: https://abogadosyasesoresgranada.es/sitemap.xml

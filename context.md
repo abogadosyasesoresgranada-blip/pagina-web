@@ -120,6 +120,39 @@ Ficha estructurada para LLMs (identidad, E-E-A-T, honorarios, materias, enlaces)
 - Mantener tono en 1ª persona y trato de usted.
 - No reintroducir materias descartadas (bancario, accidentes de tráfico, multas).
 
+### Flujo de cambios, commits y despliegue (acordado 2026-11-12)
+- Repositorio git: rama `main` → `origin` = `github.com/abogadosyasesoresgranada-blip/pagina-web`.
+- **Autorizado** hacer commits y push a `main` para nuevas funcionalidades.
+- **Siempre confirmar antes de cada modificación** (editar archivos, commit, push o deploy).
+- **Siempre facilitar un enlace localhost** (servidor local de la web estática) para revisar los cambios antes de publicarlos.
+- Secuencia: proponer cambio → OK → editar en local → previsualizar en `http://localhost:PUERTO/` → revisar que no afecta a otras páginas → OK → commit + push a `main` → OK → `ssh abogados-vps` + `deploy-abogados` → verificar que termina sin errores y comprobar la web en producción.
+- Conservar la estructura de la web: HTML, CSS, JavaScript y jQuery.
+
+### Servidor de producción (VPS)
+- Ubuntu 24.04 + **HestiaCP**, servidor web **Nginx**. Acceso: alias SSH **`abogados-vps`** (usuario `abogados`).
+- Repositorio en el VPS: `/home/abogados/repositories/pagina-web` (rama `main`).
+- Directorio público: `/home/abogados/web/abogadosyasesoresgranada.es/public_html`
+- Comando de despliegue: **`deploy-abogados`** (`/usr/local/bin/deploy-abogados`). Qué hace:
+  1. Falla si el repositorio del VPS tiene cambios locales.
+  2. `git pull --ff-only origin main`.
+  3. Comprueba que existe `index.html`.
+  4. Copia de seguridad de `public_html` en `/home/abogados/deploy/backups/AAAAMMDD-HHMMSS/`.
+  5. `rsync --delete` del repositorio a `public_html`, **excluyendo** `.git/`, `.github/`, `.htaccess`, cualquier fichero oculto (`.*`), `*.md`, `pdf/` y `*.sh`.
+- Consecuencias:
+  - `context.md` y cualquier `.md` **no se publican** (comprobado: `/context.md` da 404).
+  - **El `.htaccess` del repositorio NO se despliega y Nginx no lo lee.** Las redirecciones, los 410 y las cabeceras de producción están configurados en Nginx/HestiaCP, fuera de nuestro alcance. Cualquier cambio de redirecciones o cabeceras hay que pedírselo al responsable del servidor. El `.htaccess` queda solo como documentación.
+  - `--delete`: un archivo borrado del repositorio desaparece también de la web.
+
+### Prohibido en el servidor
+- Modificar la configuración de Nginx, HestiaCP, SSH, firewall o permisos.
+- Usar root o sudo.
+- Borrar copias de seguridad o tocar archivos fuera de los directorios del proyecto.
+- Si una tarea requiere permisos de administrador → **avisar al responsable del servidor antes de continuar**.
+
+### Estado en producción comprobado (2026-11-12)
+- OK: http→https (301), `/index.html`→`/` (301), plurales→singular (301), accidentes de tráfico (410), `/pdf/` (410), HSTS, nosniff, X-Frame-Options, Referrer-Policy, `Cache-Control` del HTML.
+- ⚠️ **`https://www.abogadosyasesoresgranada.es/` responde 200 en vez de redirigir con 301** al dominio sin www, así que hay contenido duplicado. Es configuración de Nginx: **hay que pedírselo al responsable del servidor.**
+
 ---
 
 ## 8. Objetivos de esta fase
@@ -133,3 +166,5 @@ _(Pendiente de definir con el cliente.)_
 ### 2026-11-12
 - Análisis inicial de la web local y creación de este `context.md`.
 - Pendiente: definir objetivos y prioridades de trabajo.
+- Acordado el flujo de trabajo: commits/push a `main` autorizados, confirmación previa a cada cambio, enlace localhost para revisar, y deploy por SSH al VPS más adelante (sección 7).
+- Recibidos los datos del VPS (`abogados-vps`, `deploy-abogados`). Revisión en solo lectura: SSH OK y repositorio del VPS en `b7e7661`, igual que el local. Se ha analizado el script de deploy. Detectado el problema de www (pendiente de que lo corrija el administrador).

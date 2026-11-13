@@ -21,17 +21,17 @@
 
 ### Modelo de honorarios (IVA incluido)
 - 1ª valoración telefónica **gratis** si no hace falta ver documentación.
-- Consulta de estudio documental: **100 €**, descontables si encarga el asunto.
+- Consulta de estudio documental: **100 € + IVA** (no IVA incluido; los demás precios sí lo incluyen), descontables si encarga el asunto.
 - Si el caso no es viable o no compensa, **no se acepta** ("honestidad radical").
 - Hoja de encargo por escrito con presupuesto cerrado; pago fraccionado (50 % + resto).
-- Referencias: contratos desde 100 € · detenido 24 h desde 300 € · procedimiento penal desde 1.000 € · divorcio mutuo acuerdo 1.500 €.
+- Referencias: contratos desde 100 € + IVA · detenido 24 h desde 300 € · procedimiento penal desde 1.000 € · divorcio mutuo acuerdo 1.500 €.
 
 ### Materias
 **SÍ:** Penal (detenidos 24 h) · Familia y Divorcios · Herencias y Sucesiones · Civil e Inmobiliario · Administrativo/Contencioso.
 **NO:** Derecho bancario · reclamaciones por accidentes de tráfico · multas de tráfico. (Los *delitos* de tráfico — alcoholemia, etc. — **sí**, dentro de Penal.)
 
 ### Tono de voz
-Primera persona del singular ("le digo", "asumo personalmente"), trato de **usted**, directo, transparente con precios y viabilidad, referencias concretas a juzgados y normas de Granada/Andalucía (MASC LO 1/2025, arts. CC/LEC/LECrim/CP).
+**Tono neutro, sin primera persona (ni singular ni plural: nada de "le digo" ni "nos ocupamos")** en TODA la web (decidido 2026-11-13: "se le dice", "el despacho", "el mismo abogado"). Ni un despacho de varios letrados ni uno de uno solo: evitar sujeto cuando se pueda. Las preguntas de las FAQ sí van en la voz del cliente ("¿Quién llevará mi caso?"). Siempre trato de **usted**, directo, transparente con precios y viabilidad, referencias concretas a juzgados y normas de Granada/Andalucía (MASC LO 1/2025, arts. CC/LEC/LECrim/CP).
 
 ---
 
@@ -117,7 +117,7 @@ Ficha estructurada para LLMs (identidad, E-E-A-T, honorarios, materias, enlaces)
 - Al cambiar precios, materias o datos de contacto → actualizar **a la vez**: HTML visible, JSON-LD de todas las páginas, `llms.txt` y meta descriptions afectadas.
 - Al tocar CSS/JS → subir `?v=` en todas las páginas.
 - Al cambiar contenido de una página → actualizar su `dateModified` y su `lastmod` en `sitemap.xml`.
-- Mantener tono en 1ª persona y trato de usted.
+- Mantener trato de usted. Toda la web en tono neutro, sin 1ª persona (ver «Tono de voz»).
 - No reintroducir materias descartadas (bancario, accidentes de tráfico, multas).
 
 ### Flujo de cambios, commits y despliegue (acordado 2026-11-12)
@@ -140,7 +140,7 @@ Ficha estructurada para LLMs (identidad, E-E-A-T, honorarios, materias, enlaces)
   5. `rsync --delete` del repositorio a `public_html`, **excluyendo** `.git/`, `.github/`, `.htaccess`, cualquier fichero oculto (`.*`), `*.md`, `pdf/` y `*.sh`.
 - Consecuencias:
   - `context.md` y cualquier `.md` **no se publican** (comprobado: `/context.md` da 404).
-  - **El `.htaccess` del repositorio NO se despliega y Nginx no lo lee.** Las redirecciones, los 410 y las cabeceras de producción están configurados en Nginx/HestiaCP, fuera de nuestro alcance. Cualquier cambio de redirecciones o cabeceras hay que pedírselo al responsable del servidor. El `.htaccess` queda solo como documentación.
+  - **El `.htaccess` del repositorio NO se despliega y Nginx no lo lee.** Las redirecciones, los 410 y las cabeceras de producción deberían configurarse en Nginx/HestiaCP (fuera de nuestro alcance). **Comprobado el 2026-11-13: NO lo están** (ver registro de sesiones). Cualquier cambio de redirecciones o cabeceras hay que pedírselo al responsable del servidor. El `.htaccess` queda solo como documentación.
   - `--delete`: un archivo borrado del repositorio desaparece también de la web.
 
 ### Prohibido en el servidor
@@ -181,3 +181,15 @@ _(Pendiente de definir con el cliente.)_
 - Contacto: código revisado sin errores; su meta description (contacto/horario) no canibaliza con la de la home. Todas las páginas con dateModified/lastmod 2026-11-13.
 - DinoRANK keyword research «abogados granada»: abogados (en) granada 2.400/mes; penalistas 1.000; divorcios 480; despacho(s) de abogados ≈1.100 en total; bufete ≈630.
 - DinoRANK LLMs: 9 prompts de familia añadidos por el cliente. Ninguna IA menciona el despacho ni a competidores; ChatGPT aún sin respuestas. Pendiente revisarlas en unos días. Off-page recomendado: reseñas GBP y alta en LexGo, Legaloo, abogados.es y directorio ICAGR.
+- Home: reescritos con enfoque en puntos de dolor la intro («Una citación judicial…» / «En muchos despachos grandes…») y las 5 tarjetas de especialidades. **Toda la home pasada a tono neutro, sin primera persona**: hero, H2 de especialidades («áreas de especialidad»), tarjeta «¿Cuál es su situación jurídica?», bio de Fernando, FAQ (HTML y FAQPage sincronizados), descripción del JSON-LD, bloque de ubicación y banner de cookies. JSON-LD validado.
+- El equipo no tiene Python ni Node: para previsualizar en local usar la extensión Live Server de VS Code.
+- Bio de Fernando en la home reescrita con datos del CV: socio fundador, licenciatura UGR 2010 con matrículas de honor, Título de Experto Superior en Derecho Urbanístico, Promoción Inmobiliaria y Derecho Medioambiental de Andalucía (Escuela Internacional de Posgrado de la UGR), negociación/mediación, asesor externo de otros despachos. **No usar** el «porcentaje de absoluciones» (publicidad de resultados) ni las medallas rechazadas (decisión del cliente). Schema Person de las 7 páginas: jobTitle «Abogado y socio fundador…» + credencial de Experto Superior (no es un máster); mantener igual en todas.
+- **Precio corregido: la consulta de estudio documental es 100 € + IVA** (antes ponía «IVA incluido»). Cambiado en las 7 páginas (HTML + JSON-LD) y en `llms.txt`. Contratos también «desde 100 € + IVA» (confirmado por el cliente). El resto de precios (penal, divorcio…) siguen con IVA incluido.
+- FAQ home revisada con DinoRANK: «abogado de oficio (en) granada» 210+210/mes con AI Overview, «cuánto cuesta una consulta a un abogado» 140+50, «abogado primera consulta gratis» 210, «cuánto cuesta un abogado para divorcio» 110+110, «penalista» 90+90. Cambios: preguntas «¿Cuánto cuesta una consulta con un abogado en Granada?» y «¿Cómo pedir un abogado de oficio en Granada y quién tiene derecho?» (añadido coste si se deniega, art. 17 Ley 1/1996); primeras frases que se entienden solas y con «Robledillo & Herrera Abogados». IPREM 2026 verificado: 600 €/mes, 8.400 €/año (14 pagas). HTML y FAQPage verificados idénticos (13/13).
+- **No poner precio del procurador** (el cliente no lo conoce; arancel).
+- DinoRANK LLMs (27 registros = 9 prompts × ChatGPT/Claude/Gemini): el despacho no aparece en ninguno; ChatGPT sin respuestas aún. Gemini, para «mejores abogados de granada», remite al ICAGR, abogados.es y LexGoApp → prioridad off-page. La API no permite dar de alta prompts: hacerlo a mano en el panel.
+- Penal y herencias pasadas a tono neutro (≈50 frases en penal, 10 en herencias; también el plural «nos ocupamos», «le decimos»…). Descripción del despacho en el JSON-LD (LegalService) unificada en neutro en las 7 páginas. FAQ de ambas verificadas idénticas a su FAQPage (13/13). Botón «Acceder a Google Maps» de la home centrado.
+- Civil (≈40 frases), familia (15), administrativo (3) y contacto (2) pasadas a tono neutro. **Toda la web queda en tono neutro.** JSON-LD válido en las 10 páginas; FAQ = FAQPage en las 6 páginas con FAQ (civil 13, familia 15, admin 12, penal 13, herencias 13, home 13).
+- **Revisión técnica completa (13/11):** las 10 páginas sin errores de código (etiquetas equilibradas, 1 H1 por página, sin IDs duplicados, anclas internas correctas, recursos locales existentes, JSON-LD válido, CSS sin llaves desparejadas, title/description/canonical/lang en todas). robots.txt y sitemap.xml correctos e idénticos a producción; las legales (noindex) fuera del sitemap a propósito. `.htaccess` correcto para Apache, pero **en producción no se usa**.
+- ⚠️ **Producción (Nginx), comprobado con curl el 13/11:** TODAS las URLs antiguas del `.htaccess` (301 y 410: delitos-salud-publica, reclamaciones-bancarias, abogado-divorcio-granada, plurales abogados-*, /contacto/, /abogados-en-granada/, /pdf/…) devuelven **404**. `www.` y `/index.html` devuelven **200** (duplicado; lo mitiga el canonical). Faltan las cabeceras de seguridad (HSTS, X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy) y el Cache-Control del HTML. Todo es configuración de Nginx/HestiaCP → **pedírselo al responsable del servidor** pasándole las reglas del `.htaccess`.
+- **Decisión del cliente (13/11):** las URLs antiguas que dan 404 en producción se dejan así: prefiere que Google deje de posicionarlas, sobre todo las de materias que ya no lleva (accidentes de tráfico, bancario). No hace falta pedir sus 301/410 en Nginx (esas URLs ya no reciben visitas, según el cliente). Siguen pendientes de pedir al responsable del servidor: redirección `www` → sin www y cabeceras de seguridad.

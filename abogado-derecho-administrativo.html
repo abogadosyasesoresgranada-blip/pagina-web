@@ -46,7 +46,7 @@
         "Fernando Robledillo Abogado Granada"
       ],
       "legalName": "Robledillo & Herrera Abogados",
-      "description": "Despacho de abogados en el Zaidín (Granada) dirigido en exclusiva por Fernando José Robledillo Melguizo, abogado colegiado 6631 ICAGR, con más de 16 años de ejercicio en los Juzgados de La Caleta, Plaza Nueva y la Audiencia Provincial de Granada. Asumo personalmente los asuntos de Derecho Penal (asistencia a detenidos 24 h), Familia y Divorcios, Herencias, Civil e Inmobiliario y Administrativo. Si su asunto no requiere estudiar documentación, le digo gratis por teléfono si es viable antes de nada. Si hay que estudiar documentación, el estudio del caso cuesta 100 € (IVA incluido) y se lo descuento si me encarga el asunto. Si el caso no tiene recorrido, no lo acepto. Si lo llevo, sabrá por escrito lo que le cuesta antes de empezar.",
+      "description": "Despacho de abogados en el Zaidín (Granada) dirigido en exclusiva por Fernando José Robledillo Melguizo, abogado colegiado 6631 ICAGR, con más de 16 años de ejercicio en los Juzgados de La Caleta, Plaza Nueva y la Audiencia Provincial de Granada. El letrado asume personalmente los asuntos de Derecho Penal (asistencia a detenidos 24 h), Familia y Divorcios, Herencias, Civil e Inmobiliario y Administrativo. Si su asunto no requiere estudiar documentación, sabrá gratis por teléfono si es viable antes de nada. Si hay que estudiar documentación, el estudio del caso cuesta 100 € + IVA y se descuenta si finalmente encarga el asunto. Si el caso no tiene recorrido, no se acepta. Si se acepta, sabrá por escrito lo que le cuesta antes de empezar.",
       "foundingDate": "2010-10-01",
       "url": "https://abogadosyasesoresgranada.es/",
       "logo": "https://abogadosyasesoresgranada.es/assets/img/abogados-granada-logo-Robledillo-Herrera-Abogados.webp",
@@ -186,7 +186,7 @@
       "name": "Fernando José Robledillo Melguizo",
       "givenName": "Fernando José",
       "familyName": "Robledillo Melguizo",
-      "jobTitle": "Abogado",
+      "jobTitle": "Abogado y socio fundador de Robledillo & Herrera Abogados",
       "description": "Abogado colegiado nº 6631 del Ilustre Colegio de Abogados de Granada, en ejercicio desde 2010. Dirige personalmente cada procedimiento, sin delegar la dirección letrada en pasantes, en cinco materias: derecho penal, familia y divorcios, herencias y sucesiones, derecho civil y derecho administrativo, ante los Juzgados de Granada y su Audiencia Provincial.",
       "url": "https://abogadosyasesoresgranada.es/",
       "telephone": "+34 958 19 46 63",
@@ -248,6 +248,21 @@
             "@type": "CollegeOrUniversity",
             "name": "Universidad de Granada",
             "url": "https://www.ugr.es/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Título de Experto Superior",
+          "name": "Experto Superior en Derecho Urbanístico, Promoción Inmobiliaria y Derecho Medioambiental de Andalucía",
+          "recognizedBy": {
+            "@type": "EducationalOrganization",
+            "name": "Escuela Internacional de Posgrado de la Universidad de Granada",
+            "url": "https://escuelaposgrado.ugr.es/",
+            "parentOrganization": {
+              "@type": "CollegeOrUniversity",
+              "name": "Universidad de Granada",
+              "url": "https://www.ugr.es/"
+            }
           }
         }
       ],
@@ -459,7 +474,7 @@
           "name": "¿Cuánto cuesta un abogado de derecho administrativo en Granada?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "<p>El primer paso es el <strong>estudio de viabilidad (100 €, IVA incluido)</strong>: se revisa el expediente completo y se le dice si merece la pena recurrir. Si es viable, recibirá un <strong>presupuesto cerrado por escrito</strong>, con unos honorarios mínimos de <strong>1.000 € (IVA incluido)</strong> según lo complejo que sea el caso y si hay que ir al juzgado. Los 100 € del estudio se descuentan.</p>"
+            "text": "<p>El primer paso es el <strong>estudio de viabilidad (100 € + IVA)</strong>: se revisa el expediente completo y se le dice si merece la pena recurrir. Si es viable, recibirá un <strong>presupuesto cerrado por escrito</strong>, con unos honorarios mínimos de <strong>1.000 € (IVA incluido)</strong> según lo complejo que sea el caso y si hay que ir al juzgado. Los 100 € del estudio se descuentan.</p>"
           }
         },
         {
@@ -1053,6 +1068,9 @@ p { font-family: var(--font-body); }
 .content-col.plazos-centrado > h2::after { left: 50%; transform: translateX(-50%); }
 /* Materias en tarjetas a todo el ancho, centradas: 3 + 2 en ordenador, 2 en tableta, 1 en móvil */
 .servicios-admin-band { background: var(--cream); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); padding: 56px 0; }
+.h2-banda { display: table; background: var(--navy); color: #fff !important; padding: 10px 22px !important; border: none !important; border-radius: var(--radius-sm); line-height: 1.3; margin: 0 0 32px; }
+.h2-banda::after { display: none !important; }
+.h2-banda.centrado { margin-left: auto; margin-right: auto; text-align: center; }
 .servicios-admin-band .servicios-list { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 28px; margin: 0 auto; }
 @media (min-width: 992px) {
   .servicios-admin-band .servicios-list { width: min(100%, max(80vw, 940px)); max-width: 1360px; }
@@ -1351,8 +1369,9 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 <span class="indice-titulo" id="indice-abogado-derecho-administrativo">En esta página</span>
 <ol>
 <li><a href="#servicios-administrativo">Plazos para recurrir frente a la Administración en Granada</a></li>
+<li><a href="#servicios-admin">Abogado contencioso-administrativo en Granada</a></li>
 <li><a href="#como-se-gana">Cómo se gana un recurso administrativo</a></li>
-<li><a href="#servicios-relacionados"> con el derecho contencioso-administrativo</a></li>
+<li><a href="#servicios-relacionados">Otras materias relacionadas</a></li>
 <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
 </ol>
 </nav>
@@ -1360,7 +1379,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 <aside class="sidebar-col">
 <div class="sidebar-precio-widget">
 <p class="widget-titulo">Estudio de viabilidad</p>
-<div class="precio">100 € <span>IVA incluido</span></div>
+<div class="precio">100 € <span>+ IVA</span></div>
 <p>Análisis del expediente completo. Evaluación de las opciones reales de éxito. Presupuesto cerrado sin sorpresas.</p>
 <a class="btn-consulta" href="tel:+34958194663" style="padding:10px 16px;">Reservar cita</a>
 </div>
@@ -1384,25 +1403,26 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 </tbody>
 </table>
 </div>
-<p class="tabla-nota">¿Y si la Administración no contesta? Frente a ese silencio, el recurso administrativo puede presentarse en cualquier momento. En lesiones, el año para reclamar se cuenta desde la curación o desde que se fijan las secuelas. Pero frente a una resolución expresa, pasado el plazo ya no hay recurso posible.</p>
+<p class="tabla-nota"><strong>¿Y si la Administración no contesta?</strong> Su silencio no le hace perder el derecho: contra la falta de respuesta, el recurso de alzada o de reposición puede presentarse en cualquier momento (arts. 122.1 y 124.1 de la Ley 39/2015). <strong>¿Y si ha sufrido lesiones?</strong> El año para reclamar no empieza el día del accidente, sino desde la curación o desde que se fijan las secuelas. Lo que no admite espera es una resolución expresa: pasado el plazo, queda firme y, salvo casos excepcionales como el recurso extraordinario de revisión, ya no podrá discutirla.</p>
 </div>
 </div>
 <!-- Materias de derecho administrativo: tarjetas a todo el ancho -->
 <div class="servicios-admin-band">
 <div class="container-rh">
+<h2 class="h2-banda centrado" id="servicios-admin">Abogado contencioso-administrativo en Granada</h2>
 <div class="servicios-list">
 <div class="servicio-card">
 <h3>
                             📋 Recursos Administrativos frente a sanciones o resoluciones injustas (Alzada y Reposición)
                         </h3>
-<p>¿Le han sancionado o le han denegado algo con argumentos que no se sostienen? Es más común de lo que parece, y muchas resoluciones caen por fallos de la propia Administración: no explicar por qué, saltarse pasos del procedimiento o dejar caducar el expediente. Sobre esos fallos construimos el recurso, y lo dejamos preparado para el juzgado por si no rectifican.</p>
+<p>¿Le han sancionado o le han denegado algo con argumentos que no se sostienen? Es más común de lo que parece, y muchas resoluciones caen por fallos de la propia Administración: no explicar por qué, saltarse pasos del procedimiento o dejar caducar el expediente. Sobre esos fallos se construye el recurso, que queda preparado para el juzgado por si no rectifican.</p>
 </div>
 
 <div class="servicio-card">
 <h3>
                             🏗️ Sanciones y Licencias Urbanísticas
                         </h3>
-<p>Una orden de clausura, una sanción por obras o una licencia de actividad denegada pueden dejar parado su negocio o su casa, y cada semana cuesta dinero. Rebatimos los informes técnicos del Ayuntamiento con peritos independientes y, si la clausura o la demolición es inminente, pedimos al juez que la suspenda mientras se decide.</p>
+<p>Una orden de clausura, una sanción por obras o una licencia de actividad denegada pueden dejar parado su negocio o su casa, y cada semana cuesta dinero. Los informes técnicos del Ayuntamiento se rebaten con peritos independientes y, si la clausura o la demolición es inminente, se pide al juez que la suspenda mientras se decide.</p>
 </div>
 <div class="servicio-card">
 <h3>
@@ -1457,7 +1477,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 </div>
 <div class="autor-caja">
 <img alt="Fernando José Robledillo Melguizo, abogado colegiado nº 6631 del Ilustre Colegio de Abogados de Granada" class="autor-foto" decoding="async" height="76" loading="lazy" src="/assets/img/Fernando-Robledillo-abogado-Granada.webp" width="76"/>
-<p class="page-reviewed-by" style="color:#6b7280;"><span style="margin-right:4px;">✍️</span>Redactado y revisado por Fernando José Robledillo Melguizo, abogado colegiado nº 6631 del Ilustre Colegio de Abogados de Granada, en ejercicio desde 2010 y licenciado en Derecho por la Universidad de Granada. Dirijo personalmente los procedimientos de esta materia. Puede comprobar mi colegiación buscando mi nombre en el <a class="enlace-tema" href="https://icagr.es/directorio" target="_blank" rel="noopener">directorio de colegiados del Ilustre Colegio de Abogados de Granada</a>. · <span>Última actualización: <time datetime="2026-11-13">13 de noviembre de 2026</time></span></p>
+<p class="page-reviewed-by" style="color:#6b7280;"><span style="margin-right:4px;">✍️</span>Redactado y revisado por Fernando José Robledillo Melguizo, abogado colegiado nº 6631 del Ilustre Colegio de Abogados de Granada, en ejercicio desde 2010 y licenciado en Derecho por la Universidad de Granada. Dirige personalmente los procedimientos de esta materia. Puede comprobar su colegiación buscando su nombre en el <a class="enlace-tema" href="https://icagr.es/directorio" target="_blank" rel="noopener">directorio de colegiados del Ilustre Colegio de Abogados de Granada</a>. · <span>Última actualización: <time datetime="2026-11-13">13 de noviembre de 2026</time></span></p>
 </div>
 </div>
 </div>
@@ -1480,7 +1500,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 </details>
 <details class="faq-item">
 <summary>¿Cuánto cuesta un abogado de derecho administrativo en Granada?<span aria-hidden="true" class="faq-chevron">▼</span></summary>
-<div class="faq-body"><p>El primer paso es el <strong>estudio de viabilidad (100 €, IVA incluido)</strong>: se revisa el expediente completo y se le dice si merece la pena recurrir. Si es viable, recibirá un <strong>presupuesto cerrado por escrito</strong>, con unos honorarios mínimos de <strong>1.000 € (IVA incluido)</strong> según lo complejo que sea el caso y si hay que ir al juzgado. Los 100 € del estudio se descuentan.</p></div>
+<div class="faq-body"><p>El primer paso es el <strong>estudio de viabilidad (100 € + IVA)</strong>: se revisa el expediente completo y se le dice si merece la pena recurrir. Si es viable, recibirá un <strong>presupuesto cerrado por escrito</strong>, con unos honorarios mínimos de <strong>1.000 € (IVA incluido)</strong> según lo complejo que sea el caso y si hay que ir al juzgado. Los 100 € del estudio se descuentan.</p></div>
 </details>
 <details class="faq-item">
 <summary>¿Puedo paralizar una sanción o una demolición mientras recurro?<span aria-hidden="true" class="faq-chevron">▼</span></summary>

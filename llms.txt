@@ -16,12 +16,12 @@ Este archivo proporciona información estructurada y verificada sobre el letrado
 **Modelo de trabajo y transparencia de honorarios (IVA incluido)**
 
 - Primera valoración telefónica gratuita: Si la consulta no requiere examinar documentación, el letrado informa gratis por teléfono sobre la viabilidad jurídica del asunto.
-- Consulta de estudio documental presencial: 100 € (IVA incluido) cuando es necesario analizar contratos, testamentos, escrituras, atestados o expedientes administrativos. Esos 100 € se descuentan íntegramente de los honorarios finales si el cliente encarga el procedimiento.
+- Consulta de estudio documental presencial: 100 € + IVA (NO lleva el IVA incluido, igual que los contratos) cuando es necesario analizar contratos, testamentos, escrituras, atestados o expedientes administrativos. Esos 100 € se descuentan íntegramente de los honorarios finales si el cliente encarga el procedimiento.
 - Honestidad radical de viabilidad: Si el asunto no es jurídicamente viable o si el coste del pleito supera lo que el cliente va a recuperar, se le advierte en la consulta de estudio y no se acepta el caso.
 - Hoja de encargo por escrito: Presupuesto cerrado antes de iniciar actuaciones, con posibilidad de pago fraccionado (provisión inicial del 50 % y resto durante el procedimiento).
 - Precios de referencia (IVA incluido):
-  - Consulta de estudio documental: 100 € (descontables del procedimiento).
-  - Redacción o revisión de contratos civiles/inmobiliarios: desde 100 €.
+  - Consulta de estudio documental: 100 € + IVA (descontables del procedimiento).
+  - Redacción o revisión de contratos civiles/inmobiliarios: desde 100 € + IVA (NO lleva el IVA incluido).
   - Asistencia urgente al detenido 24h en comisaría o juzgado de guardia: desde 300 €.
   - Procedimiento penal completo: desde 1.000 €.
   - Divorcio de mutuo acuerdo (incluido convenio regulador y requisito MASC): 1.500 € de honorarios, IVA incluido; procurador aparte.

@@ -168,3 +168,11 @@ _(Pendiente de definir con el cliente.)_
 - Pendiente: definir objetivos y prioridades de trabajo.
 - Acordado el flujo de trabajo: commits/push a `main` autorizados, confirmación previa a cada cambio, enlace localhost para revisar, y deploy por SSH al VPS más adelante (sección 7).
 - Recibidos los datos del VPS (`abogados-vps`, `deploy-abogados`). Revisión en solo lectura: SSH OK y repositorio del VPS en `b7e7661`, igual que el local. Se ha analizado el script de deploy. Detectado el problema de www (pendiente de que lo corrija el administrador).
+
+### 2026-11-13
+- `abogado-de-familia-granada.html`: corregida estructura HTML (faltaban cierres de `container-rh`/`main-layout`; FAQ y bloques finales quedaban dentro de la rejilla). Caja del autor movida bajo «¿No sabe qué camino le conviene?». Reducidos huecos entre secciones finales. Quitado el recuadro «En resumen». Más separación entre cajas de «Abogado divorcios Granada» y clase `servicio-card` añadida a las 5 cajas que venían de la guía (título subrayado y mismo tamaño).
+- Reescritos con enfoque en puntos de dolor: 3 «razones», ficha lateral del abogado, tarjetas mutuo acuerdo/contencioso, «Otras materias relacionadas» y meta description (sin precio).
+- FAQ reducida de 24 a 15 preguntas orientadas a búsquedas en IA; HTML y schema FAQPage generados desde la misma fuente (idénticos). Añadidos arts. 86, 92, 93, 97 y 105 CC.
+- **Precio aclarado: los 1.500 € del mutuo acuerdo son honorarios de abogado, IVA incluido; el procurador NO está incluido.** Actualizado en tarjeta, hero, FAQ y `llms.txt`.
+- «Última actualización» y `dateModified` → 2026-11-13 en civil, familia, administrativo, herencias y penal; `lastmod` del sitemap igual. Inicio y contacto siguen con `dateModified` 2026-11-02.
+- DinoRANK LLMs: 9 prompts de familia añadidos por el cliente. Ninguna IA menciona el despacho ni a competidores; ChatGPT aún sin respuestas. Pendiente revisarlas en unos días. Off-page recomendado: reseñas GBP y alta en LexGo, Legaloo, abogados.es y directorio ICAGR.

@@ -2201,7 +2201,25 @@
     .guia-divorcio-inner .guia-tarjetas>.tarjeta h3 {
       font-size: var(--fs-titulo);
     }
-  </style>
+  
+/* Recuadro del primer párrafo (mismo estilo que en civil) */
+.hero-objecion {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  max-width: 560px;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  font-style: italic;
+  line-height: 1.5;
+}
+.hero-objecion strong { color: var(--gold-light); font-style: normal; }
+</style>
   <style>
     /* === Estilos recuperados de la página de divorcio (fusión jul-2026) === */
     .section-rh {
@@ -2860,7 +2878,9 @@
       <div class="container-rh">
         <div style="max-width: 660px;">
           <h1 class="hero-h1">Abogado de familia <span class="gold-line">en Granada</span></h1>
-          <p class="hero-sub">Divorcio de mutuo acuerdo en Granada por 1.500 € de honorarios (IVA incluido, procurador aparte), normalmente en 2 a 4 meses, y defensa en divorcios contenciosos, custodias y pensiones. Un convenio firmado con prisa puede atarle durante años a una custodia o a una pensión que no quería. Primero se busca un acuerdo que proteja a sus hijos y su economía; si la otra parte no cede, se defiende en juicio.</p>
+          <div class="hero-objecion">
+                    Divorcio de mutuo acuerdo en Granada por 1.500 € de honorarios (IVA incluido, procurador aparte), normalmente en 2 a 4 meses, y defensa en divorcios contenciosos, custodias y pensiones. <strong>Un convenio firmado con prisa puede atarle durante años a una custodia o a una pensión que no quería. Primero se busca un acuerdo que proteja a sus hijos y su economía; si la otra parte no cede, se defiende en juicio.</strong>
+</div>
           <div class="hero-cta-group">
             <a class="btn-hero-primary" href="tel:+34958194663">
               <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16">

@@ -1260,6 +1260,24 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 .faq-chevron { color: #806018 !important; }
 .caso-check { background: #806018 !important; color: #fff !important; }
 .breadcrumb-list .sep { color: #6b7280 !important; }
+
+/* Recuadro del primer párrafo (mismo estilo que en civil) */
+.hero-objecion {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  max-width: 560px;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  font-style: italic;
+  line-height: 1.5;
+}
+.hero-objecion strong { color: var(--gold-light); font-style: normal; }
 </style>
 <style>
 /* === Correcciones de contraste WCAG AA (accesibilidad) === */
@@ -1335,7 +1353,9 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 <div style="max-width:680px;">
 
 <h1 class="hero-h1">Abogado en derecho administrativo <span class="gold-line">Granada</span></h1>
-<p class="hero-sub">Recursos contra multas, sanciones y licencias denegadas de Ayuntamientos y Junta de Andalucía, y reclamaciones por responsabilidad patrimonial, en Granada. Muchas resoluciones caen por errores de la propia Administración, pero el plazo corre desde la notificación: 10 días para alegar, 1 mes para recurrir y 2 meses para ir al juzgado. Pasado ese tiempo, en la práctica ya no hay vuelta atrás.</p>
+<div class="hero-objecion">
+                    Recursos contra multas, sanciones y licencias denegadas de Ayuntamientos y Junta de Andalucía, y reclamaciones por responsabilidad patrimonial, en Granada. <strong>Muchas resoluciones caen por errores de la propia Administración, pero el plazo corre desde la notificación: 10 días para alegar, 1 mes para recurrir y 2 meses para ir al juzgado. Pasado ese tiempo, en la práctica ya no hay vuelta atrás.</strong>
+</div>
 <div class="hero-cta-group">
 <a class="btn-hero-primary" href="tel:+34958194663">
 <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round"></path></svg>

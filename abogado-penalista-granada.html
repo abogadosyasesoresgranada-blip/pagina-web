@@ -1216,6 +1216,24 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 @media (max-width: 1024px) { .delitos-band .delitos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 680px) { .delitos-band .delitos-grid { grid-template-columns: 1fr; } .delitos-band .delito-card:has(.delito-detalle[open]) .delito-lista { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .delitos-band .delito-card { transition: none; } .delitos-band .delito-card:hover { transform: none; } }
+
+/* Recuadro del primer párrafo (mismo estilo que en civil) */
+.hero-objecion {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  max-width: 560px;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  font-style: italic;
+  line-height: 1.5;
+}
+.hero-objecion strong { color: var(--gold-light); font-style: normal; }
 </style>
 <style>
 /* === Correcciones de contraste WCAG AA (accesibilidad) === */
@@ -1295,7 +1313,9 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 <h1 class="hero-h1">
                 Abogado penalista en Granada<br/>
 </h1>
-<p class="hero-sub">Defensa penal en Granada con asistencia al detenido las 24 horas (610 18 49 63), desde 300 €: comisaría, juzgado de guardia, juicios rápidos y juicio oral. Que le detengan, le citen como investigado o le denuncien pone en juego su libertad y sus antecedentes. Lo que se haga en las primeras 24 horas marca el resto del proceso, tanto si le acusan como si es usted la víctima.</p>
+<div class="hero-objecion">
+                    Defensa penal en Granada con asistencia al detenido las 24 horas (610 18 49 63), desde 300 €: comisaría, juzgado de guardia, juicios rápidos y juicio oral. <strong>Que le detengan, le citen como investigado o le denuncien pone en juego su libertad y sus antecedentes. Lo que se haga en las primeras 24 horas marca el resto del proceso, tanto si le acusan como si es usted la víctima.</strong>
+</div>
 <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;">
 <a class="btn-urgencia-hero" href="tel:+34610184963">
                     🚨 Urgencias penales 24h · 610 18 49 63

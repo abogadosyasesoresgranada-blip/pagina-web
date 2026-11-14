@@ -1341,6 +1341,24 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 .vias-tarjetas > li > strong:first-child { display: block; margin-bottom: 8px; color: var(--navy); }
 @media (max-width: 1024px) { .proceso-herencia.pasos-tarjetas, .vias-tarjetas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 680px) { .proceso-herencia.pasos-tarjetas, .vias-tarjetas { grid-template-columns: 1fr; } }
+
+/* Recuadro del primer párrafo (mismo estilo que en civil) */
+.hero-objecion {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  max-width: 560px;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  font-style: italic;
+  line-height: 1.5;
+}
+.hero-objecion strong { color: var(--gold-light); font-style: normal; }
 </style>
 <style>
 /* === Correcciones de contraste WCAG AA (accesibilidad) === */
@@ -1418,7 +1436,9 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
                     Abogado herencias
                     <span class="gold-line">Granada</span>
 </h1>
-<p class="hero-sub">Tramitación completa de herencias en Granada: declaración de herederos, reparto ante notario, Impuesto de Sucesiones con la bonificación del 99 % de Andalucía y desbloqueo cuando un heredero se niega a firmar. El despacho se ocupa de todo para que no pague recargos por pasarse de plazo, no cargue con deudas que no son suyas y nadie bloquee el reparto durante años.</p>
+<div class="hero-objecion">
+                    Tramitación completa de herencias en Granada: declaración de herederos, reparto ante notario, Impuesto de Sucesiones con la bonificación del 99 % de Andalucía y desbloqueo cuando un heredero se niega a firmar. <strong>El despacho se ocupa de todo para que no pague recargos por pasarse de plazo, no cargue con deudas que no son suyas y nadie bloquee el reparto durante años.</strong>
+</div>
 
 <div class="hero-cta-group">
 <a class="btn-hero-primary" href="tel:+34958194663">

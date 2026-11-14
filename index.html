@@ -930,6 +930,13 @@ p { font-family: var(--font-body); }
   font-size: 0.875rem;
   color: var(--text-muted);
 }
+/* Etiqueta sin enlace: mismo aspecto que las que llevan enlace */
+.fernando-stat span.stat-texto {
+  color: #111c31;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+}
 
 /* ── VALORES / POR QUÉ ELEGIRNOS ────────────────────────── */
 .valores-section {
@@ -1417,7 +1424,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 </div>
 <div class="fernando-stat">
 <strong>+1.000</strong>
-<span><a href="/contacto.html">Casos resueltos</a></span>
+<span class="stat-texto">Casos resueltos</span>
 </div>
 <div class="fernando-stat">
 <strong>6631</strong>

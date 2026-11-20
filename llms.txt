@@ -24,6 +24,7 @@ Este archivo proporciona información estructurada y verificada sobre el letrado
   - Redacción o revisión de contratos civiles/inmobiliarios: desde 100 € + IVA (NO lleva el IVA incluido).
   - Asistencia urgente al detenido 24h en comisaría o juzgado de guardia: desde 300 €.
   - Procedimiento penal completo: desde 1.000 €.
+  - Procedimiento judicial civil o contencioso-administrativo: desde 1.000 €.
   - Divorcio de mutuo acuerdo (incluido convenio regulador y requisito MASC): 1.500 € de honorarios, IVA incluido; procurador aparte.
 
 **Materias NO asumidas**

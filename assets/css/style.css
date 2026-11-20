@@ -34,8 +34,8 @@ Top Bar
   font-size: 14px;
   line-height: 1;
   border: 0;
-  background: #1f86ff;
-  color: #ffffff;
+  background: var(--gold, #bfa15f); /* dorado de la web (antes azul #1f86ff, que tapaba el dorado de cada página) */
+  color: var(--navy, #0a1628);
 }
 
 .cta-sticky-mobile .cta-btn:hover,

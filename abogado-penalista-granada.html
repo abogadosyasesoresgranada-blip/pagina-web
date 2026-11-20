@@ -17,7 +17,7 @@
 <link href="/assets/css/bootstrap.min.css?v=1.2" rel="stylesheet"/>
 <link as="style" href="/assets/fonts/flaticon.css?v=1.3" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/><noscript><link href="/assets/fonts/flaticon.css?v=1.3" rel="stylesheet"/></noscript>
 <link href="/assets/css/default.css?v=1.2" rel="stylesheet"/>
-<link href="/assets/css/style.css?v=2.2" rel="stylesheet"/>
+<link href="/assets/css/style.css?v=2.3" rel="stylesheet"/>
 <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
 <meta content="#1a2e4d" name="theme-color">
 <meta content="Abogado Penalista en Granada · Urgencias 24h · Zaidín | Robledillo &amp; Herrera" property="og:title"/>
@@ -81,7 +81,7 @@
         "https://x.com/abogadosgranad",
         "https://www.tiktok.com/@robledilloherrera",
         "https://es.linkedin.com/company/robledillo-herrera-abogados",
-        "https://www.pinterest.es/abogadosengranada/",
+        "https://es.pinterest.com/abogadosengranada/",
         "https://www.facebook.com/abogadosyasesoresgranada",
         "https://www.youtube.com/@robledilloherreraabogados",
         "https://www.abogadosdegranada.com/despacho/robledillo-herrera-abogados",
@@ -263,7 +263,7 @@
         "https://www.instagram.com/abogadosengranada",
         "https://x.com/abogadosgranad",
         "https://www.youtube.com/@robledilloherreraabogados",
-        "https://www.pinterest.es/abogadosengranada/",
+        "https://es.pinterest.com/abogadosengranada/",
         "https://www.tiktok.com/@robledilloherrera",
         "https://www.elabogado.com/abogados/fernando-jose-robledillo-melguizo/"
       ],
@@ -465,7 +465,7 @@
             "name": "¿Qué hago si me detienen en Granada?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "<p><strong>No declare nada hasta hablar con su abogado.</strong> Es el único consejo que sirve en todos los casos. Tiene derecho a elegir abogado, a entrevistarse con él en privado antes de declarar y a guardar silencio (<a class=\"fuente-boe\" href=\"https://www.boe.es/buscar/act.php?id=BOE-A-1882-6036#a520\" rel=\"noopener nofollow\" target=\"_blank\">art. 520 LECrim</a>). Lo que diga nervioso en comisaría, incluso en una conversación «informal», puede acabar en el atestado.</p><ul><li>La detención <strong>no puede durar más de 72 horas</strong> sin pasar a disposición del juez.</li><li>Si no designa abogado, le asignan uno del turno de oficio.</li><li>Puede pedir que avisen a un familiar y que le vea un médico.</li></ul><p>Asistencia a detenidos en Granada <strong>las 24 horas en el 610 18 49 63</strong>. La asistencia en comisaría o en el Juzgado de Guardia cuesta <strong>desde 300 € (IVA incluido)</strong>.</p>"
+              "text": "<p><strong>No declare nada hasta hablar con su abogado.</strong> Es el único consejo que sirve en todos los casos. Tiene derecho a elegir abogado, a entrevistarse con él en privado antes de declarar y a guardar silencio (<a class=\"fuente-boe\" href=\"https://www.boe.es/buscar/act.php?id=BOE-A-1882-6036#a520\" rel=\"noopener nofollow\" target=\"_blank\">art. 520 LECrim</a>). Lo que diga nervioso en comisaría, incluso en una conversación «informal», puede acabar en el atestado.</p><ul><li>La detención <strong>no puede durar más de 72 horas</strong> sin pasar a disposición del juez.</li><li>Si no designa abogado, le asignan uno del turno de oficio.</li><li>Puede pedir que avisen a un familiar y que le vea un médico.</li></ul><p>Asistencia a detenidos en Granada <strong>las 24 horas en el <a href=\"tel:+34610184963\">610 18 49 63</a></strong>. La asistencia en comisaría o en el Juzgado de Guardia cuesta <strong>desde 300 € (IVA incluido)</strong>.</p>"
             }
           },
           {
@@ -1171,6 +1171,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 
 /* ── Ajustes de accesibilidad (contraste WCAG AA) ── */
 .faq-chevron { color: #806018 !important; }
+details[open] .faq-chevron { color: var(--navy) !important; }
 .caso-check { background: #806018 !important; color: #fff !important; }
 .breadcrumb-list .sep { color: #6b7280 !important; }
 
@@ -1220,6 +1221,8 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
   line-height: 1.5;
 }
 .hero-objecion strong { color: var(--gold-light); font-style: normal; }
+/* Teléfono de urgencias dentro del texto: se puede pulsar para llamar y conserva el aspecto del texto que lo rodea */
+.hero-objecion a[href^="tel:"], .pilar-card a[href^="tel:"], .faq-body a[href^="tel:"] { font-family: inherit; font-weight: inherit; color: inherit; text-decoration: underline; text-decoration-color: rgba(191,161,95,0.9); text-underline-offset: 3px; }
 </style>
 <style>
 /* === Correcciones de contraste WCAG AA (accesibilidad) === */
@@ -1300,7 +1303,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
                 Abogado penalista en Granada<br/>
 </h1>
 <div class="hero-objecion">
-                    Defensa penal en Granada con asistencia al detenido las 24 horas (610 18 49 63), desde 300 €: comisaría, juzgado de guardia, juicios rápidos y juicio oral. <strong>Que le detengan, le citen como investigado o le denuncien pone en juego su libertad y sus antecedentes. Lo que se haga en las primeras 24 horas marca el resto del proceso, tanto si le acusan como si es usted la víctima.</strong>
+                    Defensa penal en Granada con asistencia al detenido las 24 horas (<a href="tel:+34610184963">610 18 49 63</a>), desde 300 €: comisaría, juzgado de guardia, juicios rápidos y juicio oral. <strong>Que le detengan, le citen como investigado o le denuncien pone en juego su libertad y sus antecedentes. Lo que se haga en las primeras 24 horas marca el resto del proceso, tanto si le acusan como si es usted la víctima.</strong>
 </div>
 <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;">
 <a class="btn-urgencia-hero" href="tel:+34610184963">
@@ -1351,7 +1354,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 <div class="pilar-card">
 <span class="pilar-icon">🚨</span>
 <h3>Asistencia al Detenido 24h</h3>
-<p>Una detención llega sin avisar, y lo que diga en esas primeras horas, nervioso y sin saber de qué le acusan, puede pesar en todo el proceso. Llame al <strong>610 18 49 63</strong>: su abogado estará con usted en la comisaría o en el Juzgado de Guardia de Granada antes de que declare.</p>
+<p>Una detención llega sin avisar, y lo que diga en esas primeras horas, nervioso y sin saber de qué le acusan, puede pesar en todo el proceso. Llame al <strong><a href="tel:+34610184963">610 18 49 63</a></strong>: su abogado estará con usted en la comisaría o en el Juzgado de Guardia de Granada antes de que declare.</p>
 </div>
 <div class="pilar-card">
 <span class="pilar-icon">🛡️</span>
@@ -1693,7 +1696,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 <div class="faq-body">
 <p><strong>No declare nada hasta hablar con su abogado.</strong> Es el único consejo que sirve en todos los casos. Tiene derecho a elegir abogado, a entrevistarse con él en privado antes de declarar y a guardar silencio (<a class="fuente-boe" href="https://www.boe.es/buscar/act.php?id=BOE-A-1882-6036#a520" rel="noopener nofollow" target="_blank">art. 520 LECrim</a>). Lo que diga nervioso en comisaría, incluso en una conversación «informal», puede acabar en el atestado.</p>
 <ul><li>La detención <strong>no puede durar más de 72 horas</strong> sin pasar a disposición del juez.</li><li>Si no designa abogado, le asignan uno del turno de oficio.</li><li>Puede pedir que avisen a un familiar y que le vea un médico.</li></ul>
-<p>Asistencia a detenidos en Granada <strong>las 24 horas en el 610 18 49 63</strong>. La asistencia en comisaría o en el Juzgado de Guardia cuesta <strong>desde 300 € (IVA incluido)</strong>.</p>
+<p>Asistencia a detenidos en Granada <strong>las 24 horas en el <a href="tel:+34610184963">610 18 49 63</a></strong>. La asistencia en comisaría o en el Juzgado de Guardia cuesta <strong>desde 300 € (IVA incluido)</strong>.</p>
 </div>
 </details>
 <details class="faq-item">

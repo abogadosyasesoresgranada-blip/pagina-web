@@ -718,8 +718,7 @@ a.fuente-boe:hover, a.fuente-boe:focus-visible { color: var(--gold, #bfa15f); te
 }
 .autor-caja > p,
 .autor-caja > div { margin: 0; }
-.autor-caja .page-reviewed-by,
-.autor-caja .autor-bloque p {
+.autor-caja .page-reviewed-by {
   margin: 0;
   border-top: none;
   padding-top: 0;
@@ -809,22 +808,6 @@ p { font-family: var(--font-body); }
   bottom: 0; left: 0; right: 0;
   height: 3px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-ui);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold);
-  border: 1px solid rgba(191,161,95,0.4);
-  border-radius: 100px;
-  padding: 6px 16px;
-  margin-bottom: 24px;
 }
 
 .hero-h1 {
@@ -1217,7 +1200,6 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 .h2-banda::after { display: none !important; }
 .h2-banda.centrado { margin-left: auto; margin-right: auto; text-align: center; }
 .tarjetas { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin: 28px 0 36px; align-items: stretch; }
-.tarjetas.tres { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .tarjetas > .tarjeta { display: flex !important; flex-direction: column; align-items: center; margin: 0 !important; padding: 28px 24px 24px; background: #fff; border: 1px solid var(--gray-200); border-top: 4px solid var(--gold); border-radius: 22px; box-shadow: var(--shadow-card); transition: transform var(--transition), box-shadow var(--transition); }
 .tarjetas > .tarjeta:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--gray-200); border-top-color: var(--gold); }
 .tarjetas:not(.tres) > .tarjeta:last-child:nth-child(odd) { grid-column: 1 / -1; }
@@ -1226,8 +1208,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 .tarjetas > .tarjeta h3 .servicio-badge { display: table; margin: 8px auto 0; }
 .tarjetas > .tarjeta p { width: 100%; text-align: left; margin: 0; }
 .tarjetas > .tarjeta p + p { margin-top: 10px; }
-@media (max-width: 1024px) { .tarjetas.tres { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 680px) { .tarjetas, .tarjetas.tres { grid-template-columns: 1fr; } .tarjetas > .tarjeta:last-child:nth-child(odd) { grid-column: auto; } }
+@media (max-width: 680px) { .tarjetas { grid-template-columns: 1fr; } .tarjetas > .tarjeta:last-child:nth-child(odd) { grid-column: auto; } }
 @media (prefers-reduced-motion: reduce) { .tarjetas > .tarjeta { transition: none; } .tarjetas > .tarjeta:hover { transform: none; } }
 
 /* Pasos del proceso en tarjetas numeradas */
@@ -1267,8 +1248,8 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 </style>
 <style>/* Imágenes fluidas: nunca más anchas que su contenedor (fix desborde móvil) */img{max-width:100%;height:auto}</style>
 <style>/* Blindaje anti-desborde: los items flex con texto pueden encoger */
-.abogado-data-list li, .caso-item, .faq-item summary, .paso-item, .servicio-card { min-width: 0; }
-.abogado-data-list li > *, .caso-item > *, .faq-item summary > * { min-width: 0; overflow-wrap: anywhere; }</style>
+.abogado-data-list li, .faq-item summary, .servicio-card { min-width: 0; }
+.abogado-data-list li > *, .faq-item summary > * { min-width: 0; overflow-wrap: anywhere; }</style>
 <style>.skip-link{position:absolute;left:-9999px;top:0;z-index:9999;background:#0a1628;color:#fff;padding:12px 20px;font-family:inherit;text-decoration:none;border-radius:0 0 6px 0}.skip-link:focus{left:0}</style>
 <link href="/assets/css/lectura.css?v=1.0" rel="stylesheet"/>
 </head>

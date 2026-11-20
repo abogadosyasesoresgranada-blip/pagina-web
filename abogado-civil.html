@@ -594,8 +594,6 @@
 /* Correos y URLs largas: que puedan partirse en pantallas estrechas */
 body { overflow-wrap: break-word; }
 a[href^="mailto:"] { overflow-wrap: anywhere; }
-/* los enlaces dentro de una caja flex no deben encogerse hasta partirse */
-.caso-item a, .sidebar-casos a, .canal-value a { overflow-wrap: normal; word-break: normal; font-size: inherit; font-weight: 600; }
 
 
 /* ── TABLA DE DATOS (GEO: factor 1,5) ────────────────────── */
@@ -669,30 +667,6 @@ a.fuente-boe {
 }
 a.fuente-boe:hover, a.fuente-boe:focus-visible { color: var(--gold, #bfa15f); text-decoration-color: var(--gold, #bfa15f); }
 
-/* ── RESUMEN EN CABECERA (GEO: factor 1,3) ───────────────── */
-.resumen-tldr {
-  border: 1px solid #e3ddcf;
-  border-left: 3px solid var(--navy, #0a1628);
-  border-radius: 10px;
-  background: #fff;
-  padding: 18px 22px 16px;
-  margin: 0 0 26px;
-}
-.resumen-titulo {
-  display: block;
-  font-family: var(--font-ui);
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--navy-mid, #1a2e4d);
-  margin-bottom: 10px;
-}
-.resumen-tldr ul { margin: 0; padding-left: 1.15rem; }
-.resumen-tldr li { list-style: disc outside; }
-.resumen-tldr li::marker { color: var(--gold, #bfa15f); }
-.resumen-tldr li { margin: 7px 0; font-size: 0.97rem; line-height: 1.5; }
-
 
 /* ── ÍNDICE DE CONTENIDOS (GEO: factor 1,7) ──────────────── */
 .indice-contenidos {
@@ -751,8 +725,7 @@ a.fuente-boe:hover, a.fuente-boe:focus-visible { color: var(--gold, #bfa15f); te
 }
 .autor-caja > p,
 .autor-caja > div { margin: 0; }
-.autor-caja .page-reviewed-by,
-.autor-caja .autor-bloque p {
+.autor-caja .page-reviewed-by {
   margin: 0;
   border-top: none;
   padding-top: 0;
@@ -836,14 +809,6 @@ p { font-family: var(--font-body); }
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-ui); font-size: 0.78rem; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
-  border: 1px solid rgba(191,161,95,0.4); border-radius: 100px;
-  padding: 6px 16px; margin-bottom: 22px;
-}
-
 .hero-h1 {
   font-family: var(--font-display) !important;
   font-size: clamp(2rem, 4.2vw, 3rem) !important;
@@ -851,12 +816,6 @@ p { font-family: var(--font-body); }
   margin-bottom: 16px; letter-spacing: -0.02em;
 }
 .hero-h1 .gold-line { color: var(--gold); display: block; }
-
-.hero-sub {
-  font-family: var(--font-body); font-size: 1.08rem;
-  color: rgba(255,255,255,0.75); max-width: 580px;
-  line-height: 1.7; margin-bottom: 28px;
-}
 
 .hero-objecion {
   background: rgba(255,255,255,0.06);
@@ -897,16 +856,6 @@ p { font-family: var(--font-body); }
 }
 .btn-hero-secondary:hover { border-color: var(--gold); color: var(--gold) !important; }
 
-.hero-qualifier { font-family: var(--font-ui); font-size: 0.875rem; color: rgba(255,255,255,0.4); margin-top: 14px; font-style: italic; }
-
-/* ── TRUST BAR ───────────────────────────────────────────── */
-.trust-bar { background: var(--cream); border-bottom: 1px solid var(--gray-200); padding: 18px 0; }
-.trust-bar-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; list-style: none; margin: 0; padding: 0; }
-.trust-item { display: flex; align-items: center; gap: 10px; padding: 6px 26px; font-family: var(--font-ui); font-size: 0.875rem; font-weight: 600; color: var(--navy-mid); border-right: 1px solid var(--gray-200); }
-.trust-item:last-child { border-right: none; }
-.trust-item .trust-icon { font-size: 1.1rem; }
-.trust-item .trust-label { color: #7a5c1e; font-weight: 700; display: block; font-size: 0.97rem; }
-
 /* ── BREADCRUMB ──────────────────────────────────────────── */
 .breadcrumb-nav { background: var(--white); padding: 10px 0; border-bottom: 1px solid var(--gray-200); }
 .breadcrumb-list { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 6px; font-family: var(--font-ui); font-size: 0.8125rem; color: var(--text-muted); flex-wrap: wrap; }
@@ -932,8 +881,6 @@ p { font-family: var(--font-body); }
 .content-col h2#desahucios-masc, .content-col h3.h3-subrayado { position: relative; width: fit-content; padding-bottom: 8px; border-bottom: 2px solid var(--gold); }
 .content-col h2#desahucios-masc::after, .content-col h3.h3-subrayado::after { display: none; }
 .content-col h2:first-child { margin-top: 0; }
-
-.intro-copy { font-size: 1rem; line-height: 1.8; color: var(--text-body); border-left: 3px solid var(--gold); padding-left: 20px; margin-bottom: 2rem; }
 
 /* ✅ BLOQUE RENTABILIDAD */
 .rentabilidad-block {
@@ -1027,54 +974,12 @@ p { font-family: var(--font-body); }
   padding: 18px 18px; transition: all var(--transition);
 }
 .servicio-card:hover { box-shadow: var(--shadow-card); border-top-color: var(--navy); }
-.servicio-card.full { grid-column: 1 / -1; border-top-color: var(--navy-mid); }
 .servicio-card h3 { font-family: var(--font-ui); font-size: 0.93rem; font-weight: 700; color: var(--navy); margin: 0 0 6px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .servicio-card p { font-family: var(--font-ui); font-size: 0.875rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
 .servicio-badge { display: inline-block; background: var(--navy); color: var(--white); font-family: var(--font-ui); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 100px; margin-left: auto; }
 .servicio-badge.alerta { background: var(--urgency); }
 
-/* ── INTERLINKING CIVIL ──────────────────────────────────── */
-.interlinking-civil {
-  background: var(--cream);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-md);
-  padding: 20px 22px;
-  margin: 28px 0;
-}
-
-.interlinking-civil h3 {
-  font-family: var(--font-ui); font-size: 0.78rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);
-  margin: 0 0 12px;
-}
-
-.interlinks-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-@media (max-width: 600px) { .interlinks-grid { grid-template-columns: 1fr; } }
-
-.interlink-item {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--white); border: 1px solid var(--gray-200);
-  border-radius: var(--radius-sm); padding: 10px 14px;
-  font-family: var(--font-ui); font-size: 0.875rem; font-weight: 500;
-  color: var(--navy-mid); text-decoration: none;
-  transition: all var(--transition);
-}
-.interlink-item:hover { border-color: var(--gold); color: var(--gold); background: var(--cream); text-decoration: none; }
-.interlink-item .il-icon { font-size: 1rem; }
-
-/* Consulta 100€ */
-.consulta-alerta {
-  background: var(--urgency-bg); border: 1px solid var(--urgency-border);
-  border-left: 5px solid var(--urgency); border-radius: var(--radius-md);
-  padding: 24px 26px; margin: 32px 0;
-}
-.consulta-alerta h3 { font-family: var(--font-ui); font-size: 1rem; font-weight: 700; color: var(--urgency); margin: 0 0 10px; }
-.consulta-alerta p { font-family: var(--font-ui); font-size: 0.9rem; color: #5a2020; margin-bottom: 14px; line-height: 1.6; }
+/* Botón «Reservar cita» de la barra lateral */
 .btn-consulta { display: inline-flex; align-items: center; gap: 8px; background: var(--urgency); color: var(--white) !important; font-family: var(--font-ui); font-weight: 700; font-size: 0.9rem; padding: 12px 22px; border-radius: var(--radius-sm); text-decoration: none; transition: all var(--transition); }
 .btn-consulta:hover { background: #a93226; transform: translateY(-1px); }
 
@@ -1107,17 +1012,6 @@ p { font-family: var(--font-body); }
 .abogado-name { font-family: var(--font-display); font-size: 1.08rem; color: var(--navy); margin-bottom: 4px; display: block; }
 .abogado-colegial { display: inline-block; background: var(--cream); border: 1px solid var(--gray-200); font-family: var(--font-ui); font-size: 0.72rem; color: var(--text-muted); padding: 3px 10px; border-radius: 100px; margin-bottom: 12px; }
 .sidebar-abogado-body p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; font-family: var(--font-ui); margin-bottom: 12px; }
-.abogado-data-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
-.abogado-data-list li { font-family: var(--font-ui); font-size: 0.875rem; color: var(--text-body); display: flex; align-items: flex-start; gap: 8px; }
-.abogado-data-list a { color: var(--navy-mid); text-decoration: none; font-weight: 600; }
-.abogado-data-list a:hover { color: var(--gold); }
-
-/* Casos */
-.sidebar-casos { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 20px; box-shadow: var(--shadow-card); }
-.sidebar-casos h3 { font-family: var(--font-ui); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--gray-200); }
-.caso-item { display: flex; gap: 10px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid var(--gray-200); font-family: var(--font-ui); font-size: 0.875rem; color: var(--navy-mid); font-weight: 500; line-height: 1.4; }
-.caso-item:last-child { border-bottom: none; }
-.caso-check { flex-shrink: 0; width: 18px; height: 18px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 0.6rem; margin-top: 2px; }
 
 /* ── FAQ ─────────────────────────────────────────────────── */
 .faq-section { background: var(--cream); padding: 64px 0; }
@@ -1155,12 +1049,10 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 @media (max-width: 768px) {
   .main-layout { padding: 32px 0; }
   .servicios-grid { grid-template-columns: 1fr; }
-  .interlinks-grid { grid-template-columns: 1fr; }
 }
 
 /* ── Ajustes de accesibilidad (contraste WCAG AA) ── */
 .faq-chevron { color: #806018 !important; }
-.caso-check { background: #806018 !important; color: #fff !important; }
 .breadcrumb-list .sep { color: #6b7280 !important; }
 
 /* ===== Tarjetas visuales tipo rejilla (12-11-2026) ===== */
@@ -1183,10 +1075,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 </style>
 <style>
 /* === Correcciones de contraste WCAG AA (accesibilidad) === */
-.fernando-eyebrow, .sidebar-casos h3 { color:#806018 !important; }        /* dorado texto sobre claro */
-.detencion-protocol h2, .detencion-protocol strong { color:#9a2b2b !important; } /* rojo sobre rosa */
-.urgencia-label, .despacho-num, .sidebar-urgencia p { color:#ffffff !important; } /* texto sobre rojo */
-#servicios-relacionados a { color:#806018 !important; }                   /* enlaces del silo */
+          #servicios-relacionados a { color:#806018 !important; }                   /* enlaces del silo */
 </style>
 <style>.skip-link{position:absolute;left:-9999px;top:0;z-index:9999;background:#0a1628;color:#fff;padding:12px 20px;font-family:inherit;text-decoration:none;border-radius:0 0 6px 0}.skip-link:focus{left:0}</style>
 <link href="/assets/css/lectura.css?v=1.0" rel="stylesheet"/>

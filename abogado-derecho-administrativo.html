@@ -588,8 +588,6 @@
 /* Correos y URLs largas: que puedan partirse en pantallas estrechas */
 body { overflow-wrap: break-word; }
 a[href^="mailto:"] { overflow-wrap: anywhere; }
-/* los enlaces dentro de una caja flex no deben encogerse hasta partirse */
-.caso-item a, .sidebar-casos a, .canal-value a { overflow-wrap: normal; word-break: normal; font-size: inherit; font-weight: 600; }
 
 
 /* ── TABLA DE DATOS (GEO: factor 1,5) ────────────────────── */
@@ -613,15 +611,6 @@ a[href^="mailto:"] { overflow-wrap: anywhere; }
   border: 1px solid #e3ddcf;
   border-radius: 10px;
   overflow: hidden;
-}
-.tabla-titulo {
-  font-family: var(--font-ui);
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: #806018;
-  margin: 22px 0 10px;
 }
 .tabla-datos caption {
   caption-side: top;
@@ -662,30 +651,6 @@ a.fuente-boe {
   text-underline-offset: 3px;
 }
 a.fuente-boe:hover, a.fuente-boe:focus-visible { color: var(--gold, #bfa15f); text-decoration-color: var(--gold, #bfa15f); }
-
-/* ── RESUMEN EN CABECERA (GEO: factor 1,3) ───────────────── */
-.resumen-tldr {
-  border: 1px solid #e3ddcf;
-  border-left: 3px solid var(--navy, #0a1628);
-  border-radius: 10px;
-  background: #fff;
-  padding: 18px 22px 16px;
-  margin: 0 0 26px;
-}
-.resumen-titulo {
-  display: block;
-  font-family: var(--font-ui);
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--navy-mid, #1a2e4d);
-  margin-bottom: 10px;
-}
-.resumen-tldr ul { margin: 0; padding-left: 1.15rem; }
-.resumen-tldr li { list-style: disc outside; }
-.resumen-tldr li::marker { color: var(--gold, #bfa15f); }
-.resumen-tldr li { margin: 7px 0; font-size: 0.97rem; line-height: 1.5; }
 
 
 /* ── ÍNDICE DE CONTENIDOS (GEO: factor 1,7) ──────────────── */
@@ -745,8 +710,7 @@ a.fuente-boe:hover, a.fuente-boe:focus-visible { color: var(--gold, #bfa15f); te
 }
 .autor-caja > p,
 .autor-caja > div { margin: 0; }
-.autor-caja .page-reviewed-by,
-.autor-caja .autor-bloque p {
+.autor-caja .page-reviewed-by {
   margin: 0;
   border-top: none;
   padding-top: 0;
@@ -836,14 +800,6 @@ p { font-family: var(--font-body); }
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-ui); font-size: 0.78rem; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
-  border: 1px solid rgba(191,161,95,0.4); border-radius: 100px;
-  padding: 6px 16px; margin-bottom: 24px;
-}
-
 .hero-h1 {
   font-family: var(--font-display) !important;
   font-size: clamp(2rem, 4.2vw, 3rem) !important;
@@ -854,30 +810,6 @@ p { font-family: var(--font-body); }
 }
 
 .hero-h1 .gold-line { color: var(--gold); display: block; }
-
-.hero-sub {
-  font-family: var(--font-body); font-size: 1.1rem;
-  color: rgba(255,255,255,0.78); max-width: 600px;
-  line-height: 1.7; margin-bottom: 32px;
-}
-
-.hero-plazo-alert {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(192,57,43,0.18);
-  border: 1px solid rgba(192,57,43,0.5);
-  border-radius: var(--radius-sm);
-  padding: 10px 16px;
-  margin-bottom: 28px;
-  font-family: var(--font-ui);
-  font-size: 0.875rem;
-  color: #ffb3ad;
-  font-weight: 500;
-  max-width: 560px;
-}
-
-.hero-plazo-alert strong { color: #ff8a80; }
 
 .hero-cta-group { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
 
@@ -900,16 +832,6 @@ p { font-family: var(--font-body); }
 }
 .btn-hero-secondary:hover { border-color: var(--gold); color: var(--gold) !important; }
 
-.hero-qualifier { font-family: var(--font-ui); font-size: 0.875rem; color: rgba(255,255,255,0.4); margin-top: 14px; font-style: italic; }
-
-/* ── TRUST BAR ───────────────────────────────────────────── */
-.trust-bar { background: var(--cream); border-bottom: 1px solid var(--gray-200); padding: 18px 0; }
-.trust-bar-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; list-style: none; margin: 0; padding: 0; }
-.trust-item { display: flex; align-items: center; gap: 10px; padding: 6px 26px; font-family: var(--font-ui); font-size: 0.875rem; font-weight: 600; color: var(--navy-mid); border-right: 1px solid var(--gray-200); }
-.trust-item:last-child { border-right: none; }
-.trust-item .trust-icon { font-size: 1.1rem; }
-.trust-item .trust-label { color: #7a5c1e; font-weight: 700; display: block; font-size: 0.97rem; }
-
 /* ── BREADCRUMB ──────────────────────────────────────────── */
 .breadcrumb-nav { background: var(--white); padding: 10px 0; border-bottom: 1px solid var(--gray-200); }
 .breadcrumb-list { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 6px; font-family: var(--font-ui); font-size: 0.8125rem; color: var(--text-muted); flex-wrap: wrap; }
@@ -929,115 +851,6 @@ p { font-family: var(--font-body); }
 .content-col h2:first-child { margin-top: 0; }
 .content-col h3 { font-size: 1.1rem; color: var(--navy-mid); margin-top: 1.6rem; margin-bottom: 0.5rem; }
 
-.intro-copy { font-size: 1rem; line-height: 1.8; color: var(--text-body); border-left: 3px solid var(--gold); padding-left: 20px; margin-bottom: 2rem; }
-
-.plazos-block {
-  background: var(--urgency-bg);
-  border: 1px solid var(--urgency-border);
-  border-left: 5px solid var(--urgency);
-  border-radius: var(--radius-md);
-  padding: 26px 28px;
-  margin: 28px 0 36px;
-}
-
-.plazos-block h2 {
-  font-family: var(--font-ui);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--urgency);
-  margin: 0 0 16px;
-  padding: 0; border: none;
-  display: flex; align-items: center; gap: 10px;
-}
-.plazos-block h2::after { display: none; }
-
-.plazos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.plazo-item {
-  background: var(--white);
-  border: 1px solid var(--urgency-border);
-  border-radius: var(--radius-sm);
-  padding: 14px 16px;
-  text-align: center;
-}
-
-.plazo-num {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--urgency);
-  line-height: 1;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.plazo-label {
-  font-family: var(--font-ui);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #5a2020;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.plazo-desc {
-  font-family: var(--font-ui);
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-}
-
-.plazos-block .plazos-cta {
-  font-family: var(--font-ui);
-  font-size: 0.88rem;
-  color: #5a2020;
-  font-weight: 500;
-  margin: 0;
-  line-height: 1.5;
-}
-
-.admin-organismos {
-  background: var(--cream);
-  border: 1px solid var(--gray-200);
-  border-radius: var(--radius-md);
-  padding: 22px 24px;
-  margin: 28px 0;
-}
-
-.admin-organismos h3 {
-  font-family: var(--font-ui);
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  margin: 0 0 14px;
-}
-
-.organismos-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.org-tag {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: 100px;
-  padding: 5px 14px;
-  font-family: var(--font-ui);
-  font-size: 0.875rem;
-  color: var(--navy-mid);
-  font-weight: 500;
-}
-
 /* ── SERVICIOS CARDS ─────────────────────────────────────── */
 .servicios-list { display: flex; flex-direction: column; gap: 14px; margin: 24px 0; }
 
@@ -1055,7 +868,7 @@ p { font-family: var(--font-body); }
 /* Plazos para recurrir: bloque centrado bajo el índice y el estudio de viabilidad */
 .plazos-centrado { max-width: 980px; margin: 0 auto; padding: 0 0 56px; }
 .main-layout { padding-bottom: 8px; }
-.plazos-centrado > h2, .plazos-centrado > .tabla-titulo { text-align: center; }
+.plazos-centrado > h2 { text-align: center; }
 .content-col.plazos-centrado > h2::after { left: 50%; transform: translateX(-50%); }
 /* Materias en tarjetas a todo el ancho, centradas: 3 + 2 en ordenador, 2 en tableta, 1 en móvil */
 .servicios-admin-band { background: var(--cream); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); padding: 56px 0; }
@@ -1123,33 +936,13 @@ p { font-family: var(--font-body); }
   margin-top: 2px;
 }
 
-/* ── CONSULTA ALERTA ─────────────────────────────────────── */
-.consulta-alerta {
-  background: var(--urgency-bg); border: 1px solid var(--urgency-border);
-  border-left: 5px solid var(--urgency); border-radius: var(--radius-md);
-  padding: 26px 28px; margin: 32px 0;
-}
-.consulta-alerta h3 { font-family: var(--font-ui); font-size: 1.05rem; font-weight: 700; color: var(--urgency); margin: 0 0 10px; }
-.consulta-alerta p { font-family: var(--font-ui); font-size: 0.9rem; color: #5a2020; margin-bottom: 16px; line-height: 1.6; }
+/* ── BOTÓN «RESERVAR CITA» DE LA BARRA LATERAL ─────────────── */
 .btn-consulta, .sidebar-precio-widget { --alert-red: #c0392b; --alert-bg: #fdf2f2; --alert-border: #f5c6c6; }
 .btn-consulta { display: inline-flex; align-items: center; gap: 8px; background: var(--alert-red); color: var(--white) !important; font-family: var(--font-ui); font-weight: 700; font-size: 0.9rem; padding: 12px 22px; border-radius: var(--radius-sm); text-decoration: none; transition: all var(--transition); }
 .btn-consulta:hover { background: #a93226; transform: translateY(-1px); }
 
 /* ── SIDEBAR ─────────────────────────────────────────────── */
 .sidebar-col { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 22px; }
-
-.sidebar-cta-widget { background: var(--navy); border-radius: var(--radius-md); padding: 28px 22px; text-align: center; position: relative; overflow: hidden; }
-.sidebar-cta-widget::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold)); }
-.sidebar-cta-widget h2, .sidebar-cta-widget h3 { color: var(--white); font-size: 1.15rem; margin-bottom: 8px; }
-.sidebar-cta-widget p { color: rgba(255,255,255,0.65); font-family: var(--font-ui); font-size: 0.875rem; margin-bottom: 20px; line-height: 1.5; }
-
-.btn-sidebar-cta { display: block; background: var(--gold); color: var(--navy) !important; font-family: var(--font-ui); font-weight: 700; font-size: 0.92rem; padding: 13px 20px; border-radius: var(--radius-sm); text-decoration: none; margin-bottom: 10px; transition: all var(--transition); }
-.btn-sidebar-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-.btn-sidebar-whatsapp { display: flex; align-items: center; justify-content: center; gap: 8px; background: #0B7A5E; color: var(--white) !important; font-family: var(--font-ui); font-weight: 600; font-size: 0.88rem; padding: 11px 20px; border-radius: var(--radius-sm); text-decoration: none; transition: all var(--transition); }
-.btn-sidebar-whatsapp:hover { background: #096B52; }
-
-.sidebar-phone-link { display: block; color: var(--gold); font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; text-decoration: none; margin-top: 16px; letter-spacing: -0.02em; }
 
 /* Precio 100€ */
 .sidebar-precio-widget { background: var(--alert-bg); border: 1px solid var(--alert-border); border-top: 3px solid var(--alert-red); border-radius: var(--radius-md); padding: 20px; }
@@ -1158,34 +951,6 @@ p { font-family: var(--font-body); }
 .sidebar-precio-widget .precio { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 6px; }
 .sidebar-precio-widget .precio span { font-size: 1rem; font-family: var(--font-ui); color: var(--text-muted); font-weight: 400; }
 .sidebar-precio-widget p { font-family: var(--font-ui); font-size: 0.875rem; color: #5a2020; margin-bottom: 14px; line-height: 1.5; }
-
-/* Perfil abogado */
-.sidebar-abogado { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card); }
-.sidebar-abogado img { width: 100%; height: 200px; object-fit: cover; display: block; }
-.sidebar-abogado-body { padding: 18px 20px; }
-.sidebar-abogado-body h2, .sidebar-abogado-body h3 { font-size: 0.9rem; font-family: var(--font-ui); font-weight: 700; border: none; padding: 0; margin: 0 0 4px; }
-.sidebar-abogado-body h2::after, .sidebar-abogado-body h3::after { display: none; }
-.abogado-name { font-family: var(--font-display); font-size: 1.1rem; color: var(--navy); margin-bottom: 4px; display: block; }
-.abogado-colegial { display: inline-block; background: var(--cream); border: 1px solid var(--gray-200); font-family: var(--font-ui); font-size: 0.72rem; color: var(--text-muted); padding: 3px 10px; border-radius: 100px; margin-bottom: 12px; }
-.sidebar-abogado-body p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; font-family: var(--font-ui); margin-bottom: 12px; }
-.abogado-data-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
-.abogado-data-list li { font-family: var(--font-ui); font-size: 0.875rem; color: var(--text-body); display: flex; align-items: flex-start; gap: 8px; }
-.abogado-data-list a { color: var(--navy-mid); text-decoration: none; font-weight: 600; }
-.abogado-data-list a:hover { color: var(--gold); }
-
-/* Casos */
-.sidebar-casos { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 20px; box-shadow: var(--shadow-card); }
-.sidebar-casos h3 { font-family: var(--font-ui); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--gray-200); }
-.caso-item { display: flex; gap: 10px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid var(--gray-200); font-family: var(--font-ui); font-size: 0.875rem; color: var(--navy-mid); font-weight: 500; line-height: 1.4; }
-.caso-item:last-child { border-bottom: none; }
-.caso-check { flex-shrink: 0; width: 18px; height: 18px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 0.6rem; margin-top: 2px; }
-.caso-item a { color: var(--navy-mid); text-decoration: none; }
-.caso-item a:hover { color: var(--gold); text-decoration: underline; }
-
-/* ── ZONAS ───────────────────────────────────────────────── */
-.zonas-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-.zona-tag { background: var(--white); border: 1px solid var(--gray-200); border-radius: 100px; padding: 5px 14px; font-family: var(--font-ui); font-size: 0.875rem; color: var(--navy-mid); font-weight: 500; transition: all var(--transition); }
-.zona-tag:hover { border-color: var(--gold); color: var(--gold); }
 
 /* ── FAQ ─────────────────────────────────────────────────── */
 .faq-section { background: var(--cream); padding: 64px 0; }
@@ -1243,13 +1008,10 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 
 @media (max-width: 768px) {
   .main-layout { padding: 32px 0; }
-  .trust-item { padding: 6px 12px; font-size: 0.74rem; }
-  .trust-item .trust-label { font-size: 0.9rem; }
 }
 
 /* ── Ajustes de accesibilidad (contraste WCAG AA) ── */
 .faq-chevron { color: #806018 !important; }
-.caso-check { background: #806018 !important; color: #fff !important; }
 .breadcrumb-list .sep { color: #6b7280 !important; }
 
 /* Recuadro del primer párrafo (mismo estilo que en civil) */
@@ -1272,10 +1034,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--gold);
 </style>
 <style>
 /* === Correcciones de contraste WCAG AA (accesibilidad) === */
-.fernando-eyebrow, .sidebar-casos h3 { color:#806018 !important; }        /* dorado texto sobre claro */
-.detencion-protocol h2, .detencion-protocol strong { color:#9a2b2b !important; } /* rojo sobre rosa */
-.urgencia-label, .despacho-num, .sidebar-urgencia p { color:#ffffff !important; } /* texto sobre rojo */
-#servicios-relacionados a { color:#806018 !important; }                   /* enlaces del silo */
+          #servicios-relacionados a { color:#806018 !important; }                   /* enlaces del silo */
 </style>
 <style>.skip-link{position:absolute;left:-9999px;top:0;z-index:9999;background:#0a1628;color:#fff;padding:12px 20px;font-family:inherit;text-decoration:none;border-radius:0 0 6px 0}.skip-link:focus{left:0}</style>
 <link href="/assets/css/lectura.css?v=1.0" rel="stylesheet"/>

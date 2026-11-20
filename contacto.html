@@ -378,27 +378,13 @@
   --shadow-hover: 0 8px 32px rgba(10,22,40,0.14);
   --transition:   0.25s ease;
 }
-/* Barra de llamada fija: que las etiquetas quepan en pantallas estrechas
-   sin partirse ni recortarse. */
-.cta-sticky-mobile .cta-btn { min-width: 0; white-space: nowrap; }
-@media (max-width: 400px) {
-  .cta-sticky-mobile { padding: 8px 8px; gap: 6px; }
-  .cta-sticky-mobile .cta-btn { font-size: 0.72rem; padding: 11px 4px; gap: 3px; }
-}
-@media (max-width: 345px) {
-  .cta-sticky-mobile .cta-btn { font-size: 0.66rem; padding: 11px 2px; }
-}
-
-/* Enlaces sobre el bloque oscuro de urgencias: contraste suficiente */
-.urgencias-penal .enlace-tema { color: #f0d9a0; text-decoration-color: rgba(240,217,160,0.7); }
-.urgencias-penal .enlace-tema:hover, .urgencias-penal .enlace-tema:focus-visible { color: #fff; text-decoration-color: #fff; }
 
 
 /* Correos y URLs largas: que puedan partirse en pantallas estrechas */
 body { overflow-wrap: break-word; }
 a[href^="mailto:"] { overflow-wrap: anywhere; }
 /* los enlaces dentro de una caja flex no deben encogerse hasta partirse */
-.caso-item a, .sidebar-casos a, .canal-value a { overflow-wrap: normal; word-break: normal; font-size: inherit; font-weight: 600; }
+.canal-value a { overflow-wrap: normal; word-break: normal; font-size: inherit; font-weight: 600; }
 
 /* Las tarjetas de tarifas no deben imponer su min-content a la columna */
 .tarifa-item, .tarifa-item > * { min-width: 0; }
@@ -425,24 +411,6 @@ a[href^="mailto:"] { overflow-wrap: anywhere; }
 .footer-area .footer-legal a:focus-visible {
   color: var(--gold, #bfa15f) !important;
   text-decoration-color: var(--gold, #bfa15f) !important;
-}
-
-/* Enlaces de tema dentro del texto: menos peso que la negrita global
-   de default.css y subrayado dorado fino, igual que en la home. */
-.enlace-tema {
-  font-weight: 500;
-  color: var(--navy-mid);
-  text-decoration: underline;
-  text-decoration-color: rgba(191,161,95,0.55);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  transition: color var(--transition), text-decoration-color var(--transition);
-}
-
-.enlace-tema:hover,
-.enlace-tema:focus-visible {
-  color: var(--gold);
-  text-decoration-color: var(--gold);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -476,33 +444,12 @@ p { font-family: var(--font-body); }
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-ui); font-size: 0.78rem; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
-  border: 1px solid rgba(191,161,95,0.4); border-radius: 100px;
-  padding: 6px 16px; margin-bottom: 20px;
-}
-
 .hero-h1 {
   font-family: var(--font-display) !important;
   font-size: clamp(1.9rem, 4vw, 2.9rem) !important;
   font-weight: 700 !important; color: var(--white) !important;
   margin-bottom: 14px; letter-spacing: -0.02em;
 }
-
-.hero-sub {
-  font-family: var(--font-body); font-size: 1.05rem;
-  color: rgba(255,255,255,0.72); max-width: 560px; line-height: 1.7;
-  margin-bottom: 0;
-}
-
-/* ── BREADCRUMB ──────────────────────────────────────────── */
-.breadcrumb-nav { background: var(--white); padding: 10px 0; border-bottom: 1px solid var(--gray-200); }
-.breadcrumb-list { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 6px; font-family: var(--font-ui); font-size: 0.8125rem; color: var(--text-muted); }
-.breadcrumb-list a { color: var(--navy-mid); text-decoration: none; }
-.breadcrumb-list a:hover { color: var(--gold); }
-.breadcrumb-list .sep { color: var(--gray-300); }
 
 /* ── CANALES DE CONTACTO ─────────────────────────────────── */
 .canales-section { background: var(--white); padding: 56px 0 0; }
@@ -520,20 +467,14 @@ p { font-family: var(--font-body); }
 
 .canal-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-top-color: var(--navy); text-decoration: none; color: var(--text-body); }
 
-.canal-card.urgente { border-top-color: var(--urgency); background: var(--urgency-bg); border-color: var(--urgency-border); }
-.canal-card.urgente:hover { border-top-color: var(--urgency); border-color: var(--urgency); }
-
 .canal-card.whatsapp { border-top-color: var(--wa); }
 .canal-card.whatsapp:hover { border-top-color: var(--wa); }
 
 .canal-icon { font-size: 2rem; line-height: 1; }
 .canal-label { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
 .canal-value { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--navy); line-height: 1.1; }
-.canal-value.red { color: var(--urgency); }
 .canal-value.green { color: var(--wa-dark); }
-.canal-desc { font-family: var(--font-ui); font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; margin-top: 2px; }
 .canal-badge { display: inline-block; font-family: var(--font-ui); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; margin-top: 4px; }
-.canal-badge.urgente { background: var(--urgency); color: var(--white); }
 .canal-badge.gratis { background: var(--success); color: var(--white); }
 .canal-badge.wa { background: var(--wa); color: var(--white); }
 /* Correo en una sola línea: la letra se ajusta al ancho de su tarjeta (máx. el tamaño original).
@@ -560,24 +501,7 @@ p { font-family: var(--font-body); }
 /* Tarjetas de tarifas con el mismo fondo crema que «Cómo llegar al despacho» */
 .tarifa-item { background: var(--cream); }
 
-/* ── SECCIÓN URGENCIAS PENAL ─────────────────────────────── */
-.urgencias-penal { background: var(--navy); border-radius: var(--radius-md); padding: 28px 32px; margin-bottom: 52px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; position: relative; overflow: hidden; 
-}
-.urgencias-penal::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--urgency), #e74c3c, var(--urgency)); }
-.urgencias-text h2 { color: var(--white); font-size: 1.3rem; margin: 0 0 6px; }
-.urgencias-text p { color: rgba(255,255,255,0.7); font-family: var(--font-ui); font-size: 0.88rem; margin: 0; line-height: 1.5; max-width: 500px; }
-.btn-urgencia { display: inline-flex; align-items: center; gap: 10px; background: var(--urgency); color: var(--white) !important; font-family: var(--font-ui); font-weight: 700; font-size: 1rem; padding: 14px 28px; border-radius: var(--radius-sm); text-decoration: none; white-space: nowrap; transition: all var(--transition); box-shadow: 0 4px 16px rgba(192,57,43,0.35); }
-.btn-urgencia:hover { background: #a93226; transform: translateY(-2px); }
-
 /* ── SIDEBAR DE CONTACTO ─────────────────────────────────── */
-.contact-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 24px; }
-.abogado-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card); }
-.abogado-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
-.abogado-card-body { padding: 20px; }
-.abogado-card-body h3 { font-family: var(--font-ui); font-size: 0.875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin: 0 0 8px; }
-.abogado-name { font-family: var(--font-display); font-size: 1.1rem; color: var(--navy); display: block; margin-bottom: 4px; }
-.abogado-colegial { display: inline-block; background: var(--cream); border: 1px solid var(--gray-200); font-family: var(--font-ui); font-size: 0.72rem; color: var(--text-muted); padding: 3px 10px; border-radius: 100px; margin-bottom: 12px; }
-.abogado-card-body p { font-family: var(--font-ui); font-size: 0.875rem; color: var(--text-muted); margin: 0 0 14px; line-height: 1.6; }
 
 .como-llegar { background: var(--cream); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 20px; }
 .como-llegar h3 { font-family: var(--font-ui); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--gray-200); }
@@ -593,23 +517,9 @@ body .contacto-como-llegar .como-llegar h3 { font-size: 1.25rem; color: var(--na
 .btn-maps { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--navy); color: var(--white) !important; font-family: var(--font-ui); font-weight: 600; font-size: 0.875rem; padding: 11px 16px; border-radius: var(--radius-sm); text-decoration: none; margin-top: 14px; transition: all var(--transition); }
 .btn-maps:hover { background: var(--navy-mid); }
 
-.que-pasa { background: var(--white); border: 1px solid var(--gray-200); border-top: 3px solid var(--gold); border-radius: var(--radius-md); padding: 20px; }
-.que-pasa h3 { font-family: var(--font-ui); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--gray-200); }
-.paso-list { display: flex; flex-direction: column; gap: 0; }
-.paso-item { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--gray-200); position: relative; }
-.paso-item:last-child { border-bottom: none; }
-.paso-num { flex-shrink: 0; width: 24px; height: 24px; background: var(--navy); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-ui); font-size: 0.72rem; font-weight: 700; margin-top: 2px; }
-.paso-texto { font-family: var(--font-ui); font-size: 0.875rem; color: var(--text-body); line-height: 1.45; }
-.paso-texto strong { color: var(--navy); }
-
 /* ── SECCIÓN MAPA ────────────────────────────────────────── */
 .location-section { background: var(--cream); padding: 64px 0; border-top: 1px solid var(--gray-200); }
 .location-section h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin-bottom: 12px; }
-.horarios-block { background: var(--white); border: 1px solid var(--gray-200); border-left: 4px solid var(--navy-mid); border-radius: var(--radius-sm); padding: 18px 20px; margin-top: 20px; }
-.horario-item { display: flex; gap: 10px; align-items: flex-start; font-family: var(--font-ui); font-size: 0.875rem; color: var(--text-body); line-height: 1.5; margin-bottom: 10px; }
-.horario-item:last-child { margin-bottom: 0; }
-.horario-item strong { color: var(--navy); }
-.horario-urgencia strong { color: var(--urgency); }
 .map-container { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card); border: 1px solid var(--gray-200); }
 .map-container iframe { display: block; width: 100%; height: 420px; border: 0; }
 .map-container { position: relative; }
@@ -633,34 +543,16 @@ body .contacto-como-llegar .como-llegar h3 { font-size: 1.25rem; color: var(--na
 /* ── STICKY MOBILE Y MENU NAV MOBILE HIDDEN FIX ───────────────────────────────────────── */
 .mobile-nav[hidden] { display: none !important; }
 .mobile-nav a { color: rgba(255,255,255,0.85); text-decoration: none; font-family: var(--font-ui); font-size: 1.1rem; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.mobile-nav a.submenu-link { padding-left: 16px; font-size: 0.97rem; color: rgba(255,255,255,0.55); }
 .hamburger { background: none; border: 1px solid rgba(0,0,0,0.2); color: var(--navy); border-radius: 4px; padding: 4px 10px; cursor: pointer; font-size: 1.1rem; }
-
-.cta-sticky-mobile { position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; display: flex; background: var(--navy); border-top: 2px solid var(--gold); padding: 10px 12px; gap: 8px; }
-@media (min-width: 768px) { .cta-sticky-mobile { display: none !important; } }
-.cta-btn { flex: 1; text-align: center; background: var(--gold); color: var(--navy) !important; font-family: var(--font-ui); font-weight: 700; font-size: 0.875rem; padding: 11px 8px; border-radius: var(--radius-sm); text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 5px; }
 
 .container-rh { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 
 @media (max-width: 768px) {
-  .urgencias-penal { flex-direction: column; text-align: center; }
-  .urgencias-text p { max-width: 100%; }
-  .form-wrapper { padding: 24px 20px; }
   .location-section .row { flex-direction: column-reverse; }
 }
 
-/* ── Ajustes de accesibilidad (contraste WCAG AA) ── */
-.faq-chevron { color: #806018 !important; }
-.caso-check { background: #806018 !important; color: #fff !important; }
-.breadcrumb-list .sep { color: #6b7280 !important; }
 </style>
 <style>/* Imágenes fluidas: nunca más anchas que su contenedor (fix desborde móvil) */img{max-width:100%;height:auto}</style>
-<style>/* Fix desborde caja urgencias en móvil */
-.urgencias-penal { min-width: 0; }
-.urgencias-penal > * { min-width: 0; }
-.urgencias-text { min-width: 0; overflow-wrap: anywhere; }
-.btn-urgencia { flex-shrink: 0; max-width: 100%; }
-@media (max-width: 560px){ .btn-urgencia { width: 100%; justify-content: center; } }</style>
 <style>.skip-link{position:absolute;left:-9999px;top:0;z-index:9999;background:#0a1628;color:#fff;padding:12px 20px;font-family:inherit;text-decoration:none;border-radius:0 0 6px 0}.skip-link:focus{left:0}</style>
 <link href="/assets/css/lectura.css?v=1.0" rel="stylesheet"/>
 </head>

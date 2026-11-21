@@ -110,7 +110,7 @@ h1,h2,h3,h4{font-family:var(--font-display);color:var(--navy);line-height:1.2}
 .sidebar-urgencia::before,.sidebar-cta-widget::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold))}
 .sidebar-urgencia .urgencia-label{font-family:var(--font-ui);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;display:block;margin-bottom:6px}
 .sidebar-urgencia h2,.sidebar-urgencia h3{color:var(--white);font-size:1.2rem;margin-bottom:4px}
-.sidebar-urgencia p{color:rgba(255,255,255,.85);font-family:var(--font-ui);font-size:.875rem;margin-bottom:20px;line-height:1.5}
+.sidebar-urgencia p{color:#fff;font-family:var(--font-ui);font-size:.875rem;margin-bottom:20px;line-height:1.5}
 .btn-sidebar-urgencia{display:block;background:var(--white);font-family:var(--font-ui);font-weight:700;font-size:1.1rem;padding:14px 20px;border-radius:var(--radius-sm);text-decoration:none;margin-bottom:12px;transition:all var(--transition);color:var(--red)!important}
 .btn-sidebar-urgencia:hover{background:rgba(255,255,255,.9);transform:translateY(-1px)}
 .btn-sidebar-whatsapp{display:flex;align-items:center;justify-content:center;gap:8px;background:#0b7a5e;font-family:var(--font-ui);font-weight:600;font-size:.88rem;padding:11px 20px;border-radius:var(--radius-sm);text-decoration:none;color:var(--white)!important}

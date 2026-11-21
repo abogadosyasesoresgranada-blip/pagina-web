@@ -184,3 +184,7 @@ details[open] .faq-chevron{transform:rotate(180deg);background:var(--gold);color
 .caso-item:last-child{border-bottom:none}
 .caso-check{flex-shrink:0;width:18px;height:18px;background:#806018;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.6rem;margin-top:2px}
 @media (max-width:480px){.btn-urgencia-hero,.btn-gold-hero{font-size:.88rem;padding:14px 18px;letter-spacing:.04em;width:100%;justify-content:center}.btn-secundario-hero{width:100%;justify-content:center}}
+
+/* El rótulo y el H1 del hero, cada uno en su línea (style.css pone el H1 en línea) */
+.hero-kicker{display:block}
+.hero-h1{display:block}

@@ -1,4 +1,4 @@
-/* /assets/js/main.js - v2.1 (RGPD: solo cookies técnicas y de analítica) */
+/* /assets/js/main.js - v2.2 (RGPD: solo cookies técnicas y de analítica) */
 document.addEventListener("DOMContentLoaded", function () {
     
     // --- 1. LÓGICA DEL MENÚ MÓVIL ---
@@ -231,5 +231,44 @@ document.addEventListener("DOMContentLoaded", function () {
         form.addEventListener("submit", function () {
             registrarContacto("formulario", form.getAttribute("id") || form.getAttribute("name") || "");
         }, { passive: true });
+    });
+
+    // --- 6. SUBMENÚS DEL MENÚ (Familia, Herencias) ---
+    function cerrarSubmenus(excepto) {
+        document.querySelectorAll(".has-sub.open").forEach(function (li) {
+            if (li === excepto) return;
+            li.classList.remove("open");
+            const b = li.querySelector(".sub-toggle");
+            if (b) b.setAttribute("aria-expanded", "false");
+        });
+    }
+    document.querySelectorAll(".sub-toggle").forEach(function (btn) {
+        const li = btn.closest(".has-sub");
+        btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const abrir = !li.classList.contains("open");
+            cerrarSubmenus(li);
+            li.classList.toggle("open", abrir);
+            btn.setAttribute("aria-expanded", abrir ? "true" : "false");
+        });
+    });
+    document.addEventListener("click", function (e) {
+        if (!e.target.closest(".has-sub")) cerrarSubmenus(null);
+    });
+    document.addEventListener("keydown", function (e) {
+        if (e.key !== "Escape") return;
+        const abierto = document.querySelector(".has-sub.open");
+        cerrarSubmenus(null);
+        if (abierto) { const b = abierto.querySelector(".sub-toggle"); if (b) b.focus(); }
+    });
+    // Móvil: cada apartado con subpáginas se abre y se cierra con su flecha
+    document.querySelectorAll(".mobile-sub-toggle").forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const panel = document.getElementById(btn.getAttribute("aria-controls"));
+            const abierto = btn.getAttribute("aria-expanded") === "true";
+            btn.setAttribute("aria-expanded", abierto ? "false" : "true");
+            if (panel) panel.hidden = abierto;
+        });
     });
 });

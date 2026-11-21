@@ -1,0 +1,11 @@
+# Calendario del blog. «slug fecha» = publicado ese día; «slug» sin fecha = en cola (se publica en este orden).
+# Para publicar el siguiente: perl .herramientas/blog/blog.pl publicar
+alcoholemia-positiva-penas-juicio-rapido         2026-11-21
+denuncia-violencia-genero-primeras-72-horas      2026-11-21
+gastos-extraordinarios-pension-alimentos         2026-11-21
+reducir-pension-alimentos-paro
+dispensa-declarar-416-lecrim
+pension-compensatoria-nueva-pareja
+suspension-pena-prision-requisitos
+cambio-residencia-menor-sin-consentimiento
+prescripcion-delitos-plazos

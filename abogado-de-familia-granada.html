@@ -486,30 +486,6 @@
         },
         {
           "@type": "Question",
-          "name": "¿Cuánto cuesta un divorcio en Granada?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "<p>Depende de si hay acuerdo. En un <strong>divorcio de mutuo acuerdo</strong>, los honorarios del abogado son <strong>1.500 € (IVA incluido)</strong> por toda la tramitación, con un solo abogado para los dos. El <strong>procurador</strong>, obligatorio ante el juzgado, se paga aparte según su arancel —también puede ser uno para los dos— y se le indicará su importe antes de empezar. Lo que no tendrá que pagar son <strong>tasas judiciales</strong>: los particulares están exentos.</p><p>En un <strong>divorcio contencioso</strong>, los honorarios parten de <strong>2.500 € + IVA</strong> y el presupuesto depende de lo que se discuta —custodia, vivienda, peritos, recursos—; cada parte necesita su propio abogado y procurador. En los dos casos recibirá un <strong>presupuesto cerrado por escrito</strong> antes de empezar, sin sorpresas al final. Y tenga en cuenta que no es posible divorciarse sin abogado, ni siquiera ante notario. Tiene el detalle en el <a href=\"#divorcio\">apartado de divorcio</a>.</p>"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cuánto tarda un divorcio en Granada?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "<p>De mutuo acuerdo, normalmente <strong>entre 2 y 4 meses</strong>. Contencioso, <strong>entre 12 y 24 meses</strong>, según la carga del juzgado. Pero no tiene que pasar todo ese tiempo con la vida en el aire: con las <strong>medidas provisionales</strong>, el juez puede decidir en cuestión de semanas quién se queda en la casa, con quién viven los hijos y qué pensión se paga mientras dura el proceso.</p>"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Me puedo divorciar si mi pareja no quiere?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "<p><strong>Sí.</strong> En España no hace falta el consentimiento del otro, ni estar separados de hecho, ni demostrar culpa de nadie: basta con que hayan pasado tres meses desde la boda, o menos si hay un riesgo para usted o para sus hijos (<a class=\"fuente-boe\" href=\"https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#a86\" rel=\"noopener nofollow\" target=\"_blank\">art. 86 CC</a>). Si su pareja se niega, el divorcio se pide por la vía contenciosa, y será el juez quien decida cómo quedan los hijos, la casa, las pensiones y los bienes.</p>"
-          }
-        },
-        {
-          "@type": "Question",
           "name": "¿Si me voy de casa pierdo la custodia de mis hijos o la vivienda?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -1513,11 +1489,6 @@
       color: var(--navy);
     }
 
-    /* Espacio entre el título «Divorcio de mutuo acuerdo… o contencioso» y las tarjetas (sin tabla intermedia) */
-    #divorcio+.divorcio-grid {
-      margin-top: 40px;
-    }
-
     .faq-body p {
       margin: 0;
     }
@@ -1890,120 +1861,6 @@
       margin-bottom: 14px;
     }
 
-    /* TIPOS DE DIVORCIO CARDS */
-    .divorcio-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 768px) {
-      .divorcio-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .divorcio-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      border: 1px solid var(--gray-200);
-      padding: 36px 32px;
-      box-shadow: var(--shadow-card);
-      transition: box-shadow var(--transition);
-    }
-
-    .divorcio-card:hover {
-      box-shadow: var(--shadow-hover);
-    }
-
-    .divorcio-card.featured {
-      border: 2px solid var(--gold);
-      position: relative;
-    }
-
-    .divorcio-card.featured::before {
-      content: 'Más solicitado';
-      position: absolute;
-      top: -14px;
-      left: 28px;
-      background: var(--gold);
-      color: var(--navy);
-      font-family: var(--font-ui);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 14px;
-      border-radius: 20px;
-    }
-
-    .card-icon {
-      font-size: 2.2rem;
-      margin-bottom: 18px;
-    }
-
-    .card-title {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 12px;
-    }
-
-    /* Icono y título de las tarjetas de divorcio centrados sobre el texto */
-    .divorcio-card .card-icon,
-    .divorcio-card .card-title {
-      text-align: center;
-    }
-
-    .card-desc {
-      font-size: 0.97rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      line-height: 1.7;
-    }
-
-    .card-features {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 24px;
-    }
-
-    .card-features li {
-      padding: 6px 0;
-      font-family: var(--font-ui);
-      font-size: 0.88rem;
-      color: var(--text-body);
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .card-features li::before {
-      content: '✓';
-      color: var(--gold);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .card-price {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--navy);
-      border-top: 1px solid var(--gray-200);
-      padding-top: 16px;
-    }
-
-    .card-price span {
-      font-family: var(--font-ui);
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-
     /* SIDEBAR CTA */
     .cta-tel {
       display: block;
@@ -2084,8 +1941,7 @@
 
     /* Títulos subrayados en dorado fino: cajas de «Abogado divorcios Granada»,
    tarjetas de divorcio (mutuo acuerdo / contencioso) y cajas de la guía */
-    .servicios-list>.servicio-card>h3,
-.divorcio-card>.card-title {
+    .servicios-list>.servicio-card>h3 {
       text-decoration-line: underline;
       text-decoration-color: var(--gold);
       text-decoration-thickness: 1.5px;
@@ -2321,9 +2177,9 @@
             <ol>
               <li><a href="#por-que-elegirnos">Abogado matrimonialista en Granada</a></li>
               <li><a href="#servicios-familia">Divorcios, custodias y pensiones</a></li>
-              <li><a href="#divorcio">Divorcio de mutuo acuerdo o contencioso</a></li>
+              <li><a href="#divorcio">Divorcio: mutuo acuerdo o contencioso</a></li>
               <li><a href="#custodia-paso-a-paso">Cómo se pide la custodia, paso a paso</a></li>
-              <li><a href="#coste-divorcio">Cuánto cuesta un divorcio</a></li>
+              <li><a href="#coste-divorcio">Cuánto cuesta un abogado de familia</a></li>
               <li><a href="#servicios-relacionados">Otras materias relacionadas</a></li>
               <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
             </ol>
@@ -2365,8 +2221,7 @@
           </div>
         </article>
         <section aria-labelledby="servicios-familia" class="content-col content-full">
-          <h2 class="section-title h2-banda centrado" id="servicios-familia" style="margin-bottom:36px;">Abogado
-            divorcios Granada</h2>
+          <h2 class="section-title h2-banda centrado" id="servicios-familia" style="margin-bottom:36px;">Divorcios, custodias y pensiones en Granada</h2>
           <div class="servicios-list tarjetas tarjeta-destacada">
             <div class="servicio-card tarjeta">
               <div aria-hidden="true" class="tarjeta-icono">📋</div>
@@ -2375,7 +2230,7 @@
                 divorcio, sea de mutuo acuerdo o contencioso, conviene dejar bien resueltos desde el principio los
                 hijos, la vivienda y el reparto de bienes. En una separación con hijos, lo primero es dejar resueltos la custodia, las visitas y la pensión de alimentos.</p>
               <p style="margin-top:10px;text-align:center;"><a href="#divorcio"
-                  style="font-family:var(--font-ui);font-weight:600;color:#806018;text-decoration:none;">↓ Ver las diferencias entre los tipos de divorcio</a></p>
+                  style="font-family:var(--font-ui);font-weight:600;color:#806018;text-decoration:none;">↓ Divorcio de mutuo acuerdo o contencioso</a></p>
               <p style="margin-top:6px;text-align:center;"><a class="enlace-tema" href="/abogado-divorcios-granada.html">Todo sobre el divorcio en Granada: requisitos, pasos y precios</a></p>
             </div>
           </div>
@@ -2506,42 +2361,12 @@
             </div>
           </div>
           <div class="section-label">Los dos caminos</div>
-          <h2 class="section-title" id="divorcio">Divorcio de mutuo acuerdo vs. Divorcio contencioso
-          </h2>
-          <p style="text-align:center;font-family:var(--font-ui);margin:-4px 0 22px;">Requisitos, pasos, juzgado y preguntas frecuentes en la página de <a class="enlace-tema" href="/abogado-divorcios-granada.html">abogado de divorcios en Granada</a>.</p>
-          <div class="divorcio-grid">
-            <div class="divorcio-card featured">
-              <div class="card-icon">🤝</div>
-              <div class="card-title">Divorcio de Mutuo Acuerdo (divorcio express)</div>
-              <div class="card-desc">Si ya están de acuerdo en lo esencial, no tiene sentido pelear en un juzgado. Es
-                el camino más rápido y económico, y el que mejor protege a sus hijos. El trabajo del abogado es que ese
-                acuerdo quede bien escrito, para que no haya sorpresas después.</div>
-              <ul class="card-features">
-                <li>Convenio regulador completo, sin cabos sueltos que acaben en disputa</li>
-                <li>Un solo abogado para los dos, que vela por un acuerdo equilibrado</li>
-                <li>Normalmente resuelto en 2 a 4 meses</li>
-                <li>Sus hijos, al margen del conflicto</li>
-                <li>Puede firmarse ante notario si no hay hijos menores ni hijos con medidas de apoyo</li>
-              </ul>
-              <div class="card-price">1.500 € <span>(honorarios, IVA incluido; procurador aparte)</span></div>
-            </div>
-            <div class="divorcio-card">
-              <div class="card-icon">⚖️</div>
-              <div class="card-title">Divorcio Contencioso (cuando no hay acuerdo)</div>
-              <div class="card-desc">Cuando no hay forma de entenderse, decide el juez. Y el juez no da la razón a
-                quien más grita, sino a quien mejor lo demuestra: por eso se prepara cada prueba para que su versión
-                pese en la sentencia.</div>
-              <ul class="card-features">
-                <li>Defensa en juicio de principio a fin, en Granada y provincia</li>
-                <li>Medidas urgentes para que no quede desprotegido mientras dura el proceso</li>
-                <li>Una estrategia clara para la custodia de sus hijos y la vivienda</li>
-                <li>Reparto de los bienes y gananciales sin salir perjudicado</li>
-                <li>Recurso ante la Audiencia Provincial si la sentencia no le es favorable</li>
-              </ul>
-              <div class="card-price">Desde 2.500 € + IVA <span>(presupuesto cerrado según el caso; procurador aparte)</span></div>
-            </div>
+          <h2 class="section-title" id="divorcio">¿Va a divorciarse?</h2>
+          <div style="background:var(--cream); border:1px solid var(--gray-200); border-left:4px solid var(--gold); border-radius:var(--radius-md); padding:26px 28px; max-width:860px; margin:0 auto 8px; font-family:var(--font-ui);">
+            <p style="margin:0 0 10px;">Si hay acuerdo en lo esencial, el <strong>divorcio de mutuo acuerdo</strong> cuesta <strong>1.500 € (IVA incluido)</strong>, con un solo abogado para los dos, y suele resolverse en 2 a 4 meses; sin hijos menores, puede firmarse ante notario. Si no lo hay, el <strong>divorcio contencioso</strong> parte de <strong>2.500 € + IVA</strong> y decide el juez. En los dos casos, el procurador va aparte.</p>
+            <p style="margin:0 0 18px;">Requisitos, pasos en los Juzgados de Familia de La Caleta, convenio regulador y preguntas frecuentes, en la página de divorcios.</p>
+            <p style="margin:0;text-align:center;"><a href="/abogado-divorcios-granada.html" style="display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;padding:13px 26px;border-radius:var(--radius-sm);text-decoration:none;">Ver todo sobre el divorcio en Granada →</a></p>
           </div>
-        
           <p class="cta-linea">¿No sabe qué camino le conviene? <a href="tel:+34958194663">Llame al 958 19 46 63</a>: la
             valoración telefónica es gratuita.</p>
           <div style="background:var(--cream); border-radius:var(--radius-md); padding:30px 28px; margin-top:56px; border:1px solid var(--gray-200);">
@@ -2554,7 +2379,7 @@
             <li><strong>La sentencia</strong>, que puede recurrirse ante la Audiencia Provincial de Granada.</li>
           </ol>
           </div>
-          <h2 class="section-title" id="coste-divorcio" style="margin-top:56px;">¿Cuánto cuesta un divorcio en Granada?</h2>
+          <h2 class="section-title" id="coste-divorcio" style="margin-top:56px;">¿Cuánto cuesta un abogado de familia en Granada?</h2>
           <p style="font-family:var(--font-ui);color:var(--text-body);">Estos son todos los gastos de un divorcio o de un procedimiento de custodia, con quién los cobra:</p>
           <p class="tabla-titulo">Gastos de un divorcio o una custodia en Granada</p>
           <div class="tabla-datos-wrap">
@@ -2645,28 +2470,6 @@
             <div class="faq-body">
               <p><strong>Antes de dar ningún paso:</strong> antes de firmar nada, de irse de casa o de dejar de pagar. Lo que se decide en las primeras semanas —quién se queda en la vivienda, con quién viven los niños— suele marcar cómo acaba todo, y deshacer un error después cuesta mucho más.</p>
               <p>También si la otra parte ha dejado de cumplir la sentencia o si su situación ha cambiado y necesita revisar una pensión o la custodia.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>¿Cuánto cuesta un divorcio en Granada?<span aria-hidden="true"
-                class="faq-chevron">▼</span></summary>
-            <div class="faq-body">
-              <p>Depende de si hay acuerdo. En un <strong>divorcio de mutuo acuerdo</strong>, los honorarios del abogado son <strong>1.500 € (IVA incluido)</strong> por toda la tramitación, con un solo abogado para los dos. El <strong>procurador</strong>, obligatorio ante el juzgado, se paga aparte según su arancel —también puede ser uno para los dos— y se le indicará su importe antes de empezar. Lo que no tendrá que pagar son <strong>tasas judiciales</strong>: los particulares están exentos.</p>
-              <p>En un <strong>divorcio contencioso</strong>, los honorarios parten de <strong>2.500 € + IVA</strong> y el presupuesto depende de lo que se discuta —custodia, vivienda, peritos, recursos—; cada parte necesita su propio abogado y procurador. En los dos casos recibirá un <strong>presupuesto cerrado por escrito</strong> antes de empezar, sin sorpresas al final. Y tenga en cuenta que no es posible divorciarse sin abogado, ni siquiera ante notario. Tiene el detalle en el <a href="#divorcio">apartado de divorcio</a>.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>¿Cuánto tarda un divorcio en Granada?<span aria-hidden="true"
-                class="faq-chevron">▼</span></summary>
-            <div class="faq-body">
-              <p>De mutuo acuerdo, normalmente <strong>entre 2 y 4 meses</strong>. Contencioso, <strong>entre 12 y 24 meses</strong>, según la carga del juzgado. Pero no tiene que pasar todo ese tiempo con la vida en el aire: con las <strong>medidas provisionales</strong>, el juez puede decidir en cuestión de semanas quién se queda en la casa, con quién viven los hijos y qué pensión se paga mientras dura el proceso.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>¿Me puedo divorciar si mi pareja no quiere?<span aria-hidden="true"
-                class="faq-chevron">▼</span></summary>
-            <div class="faq-body">
-              <p><strong>Sí.</strong> En España no hace falta el consentimiento del otro, ni estar separados de hecho, ni demostrar culpa de nadie: basta con que hayan pasado tres meses desde la boda, o menos si hay un riesgo para usted o para sus hijos (<a class="fuente-boe" href="https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#a86" rel="noopener nofollow" target="_blank">art. 86 CC</a>). Si su pareja se niega, el divorcio se pide por la vía contenciosa, y será el juez quien decida cómo quedan los hijos, la casa, las pensiones y los bienes.</p>
             </div>
           </details>
           <details class="faq-item">

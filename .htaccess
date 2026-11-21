@@ -27,7 +27,7 @@ RewriteRule ^reclamaciones-bancarias\.html$     /abogado-civil.html [R=301,L]
 # y Google tiende a tratarlo como soft 404: la URL seguía indexada y arrastraba
 # consultas de accidentes de tráfico hacia la home. El 410 pide la retirada.
 RewriteRule ^abogado-accidentes-trafico\.html$  - [G,L]
-RewriteRule ^abogado-divorcio-granada\.html$    /abogado-de-familia-granada.html#divorcio [NE,R=301,L]
+RewriteRule ^abogado-divorcio-granada\.html$    /abogado-divorcios-granada.html [R=301,L]
 RewriteRule ^abogado-herencias\.html$           /abogado-herencias-granada.html [R=301,L]
 # (oct-2026) Entrada de blog retirada. 301 y no 410: la materia (conflictos
 #            entre vecinos, propiedad horizontal, lindes y danos por obras del
@@ -48,7 +48,7 @@ RewriteRule ^abogado-trafico-de-drogas\.html$             /abogado-penalista-gra
 # 1.2) FUSIÓN anti-canibalización: Divorcio absorbido por Familia (jul-2026)
 #      La página de divorcio se ha integrado como sección dentro de Familia.
 #      301 permanente para conservar autoridad y no dejar 404.
-RewriteRule ^abogados-divorcio-granada\.html$   /abogado-de-familia-granada.html#divorcio [NE,R=301,L]
+RewriteRule ^abogados-divorcio-granada\.html$   /abogado-divorcios-granada.html [R=301,L]
 
 # 1.5) URLs en SINGULAR (oct-2026): abogado de familia / herencias / administrativo
 #      Las URLs en plural pasan a redirigir a su versión en singular.

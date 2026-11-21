@@ -27,6 +27,8 @@ Este archivo proporciona información estructurada y verificada sobre el letrado
   - Procedimiento judicial civil o contencioso-administrativo: desde 1.000 €.
   - Tramitación completa de una herencia sin conflicto entre herederos: desde 1.000 € + IVA (NO lleva el IVA incluido). Con conflicto, presupuesto cerrado tras el estudio.
   - Divorcio de mutuo acuerdo (incluido convenio regulador y requisito MASC): 1.500 € de honorarios, IVA incluido; procurador aparte.
+  - Divorcio contencioso: desde 2.500 € + IVA (NO lleva el IVA incluido); procurador aparte.
+  - Custodia (medidas paternofiliales o modificación de medidas): desde 2.500 € + IVA (NO lleva el IVA incluido).
 
 **Materias NO asumidas**
 

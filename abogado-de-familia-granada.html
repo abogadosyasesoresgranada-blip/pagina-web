@@ -466,8 +466,8 @@
         "@id": "https://abogadosyasesoresgranada.es/#fernando"
       },
       "datePublished": "2026-10-16",
-      "dateModified": "2026-11-20",
-      "lastReviewed": "2026-11-20"
+      "dateModified": "2026-11-21",
+      "lastReviewed": "2026-11-21"
     },
     {
       "@type": "FAQPage",
@@ -489,7 +489,7 @@
           "name": "¿Cuánto cuesta un divorcio en Granada?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "<p>Depende de si hay acuerdo. En un <strong>divorcio de mutuo acuerdo</strong>, los honorarios del abogado son <strong>1.500 € (IVA incluido)</strong> por toda la tramitación, con un solo abogado para los dos. El <strong>procurador</strong>, obligatorio ante el juzgado, se paga aparte según su arancel —también puede ser uno para los dos— y se le indicará su importe antes de empezar. Lo que no tendrá que pagar son <strong>tasas judiciales</strong>: los particulares están exentos.</p><p>En un <strong>divorcio contencioso</strong> el precio depende de lo que se discuta —custodia, vivienda, peritos, recursos— y cada parte necesita su propio abogado y procurador. En los dos casos recibirá un <strong>presupuesto cerrado por escrito</strong> antes de empezar, sin sorpresas al final. Y tenga en cuenta que no es posible divorciarse sin abogado, ni siquiera ante notario. Tiene el detalle en el <a href=\"#divorcio\">apartado de divorcio</a>.</p>"
+            "text": "<p>Depende de si hay acuerdo. En un <strong>divorcio de mutuo acuerdo</strong>, los honorarios del abogado son <strong>1.500 € (IVA incluido)</strong> por toda la tramitación, con un solo abogado para los dos. El <strong>procurador</strong>, obligatorio ante el juzgado, se paga aparte según su arancel —también puede ser uno para los dos— y se le indicará su importe antes de empezar. Lo que no tendrá que pagar son <strong>tasas judiciales</strong>: los particulares están exentos.</p><p>En un <strong>divorcio contencioso</strong>, los honorarios parten de <strong>2.500 € + IVA</strong> y el presupuesto depende de lo que se discuta —custodia, vivienda, peritos, recursos—; cada parte necesita su propio abogado y procurador. En los dos casos recibirá un <strong>presupuesto cerrado por escrito</strong> antes de empezar, sin sorpresas al final. Y tenga en cuenta que no es posible divorciarse sin abogado, ni siquiera ante notario. Tiene el detalle en el <a href=\"#divorcio\">apartado de divorcio</a>.</p>"
           }
         },
         {
@@ -522,6 +522,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "<p>Ni la madre ni el padre tienen preferencia por serlo. Hoy los tribunales consideran la <strong>custodia compartida</strong> el régimen normal, salvo que perjudique al menor; si no encaja, se da la <strong>exclusiva</strong> a uno y el otro tiene un régimen de visitas. El juez se fija en lo práctico: quién se ha ocupado de los niños hasta ahora, los horarios de cada uno y la distancia entre las casas y el colegio. Un plan de parentalidad concreto y realista es lo que más pesa.</p>"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo pido la custodia de mi hijo en Granada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<p>Depende de su situación: si está casado, se pide en el divorcio o la separación; si no, en un procedimiento de <strong>medidas paternofiliales</strong>, y si ya hay sentencia, con una <strong>modificación de medidas</strong>. Antes hay que intentar un acuerdo, salvo urgencia o violencia. Después, la demanda se presenta en los <strong>Juzgados de Familia de Granada (La Caleta)</strong> con un plan de parentalidad, y el juez decide tras el informe del equipo psicosocial y, si procede, tras escuchar a los hijos. Los honorarios parten de <strong>2.500 € + IVA</strong>, con presupuesto cerrado por escrito.</p>"
           }
         },
         {
@@ -1692,6 +1700,19 @@
       color: var(--navy) !important;
     }
 
+    /* Tabla de costes del divorcio y la custodia (mismo estilo que en herencias) */
+    .tabla-datos-wrap { overflow-x: auto; max-width: 100%; margin: 22px 0 26px; -webkit-overflow-scrolling: touch; }
+    .tabla-datos { width: 100%; min-width: 540px; border-collapse: collapse; font-family: var(--font-ui); font-size: 0.92rem; background: #fff; border: 1px solid #e3ddcf; border-radius: 10px; overflow: hidden; }
+    .tabla-titulo { font-family: var(--font-ui); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.09em; text-transform: uppercase; color: #806018; margin: 22px 0 10px; }
+    .tabla-datos th, .tabla-datos td { padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid #efeade; line-height: 1.45; }
+    .tabla-datos thead th { background: var(--navy, #0a1628); color: #fff; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; border-bottom: none; }
+    .tabla-datos tbody tr:last-child th, .tabla-datos tbody tr:last-child td { border-bottom: none; }
+    .tabla-datos tbody tr:nth-child(even) { background: #fffdf9; }
+    .tabla-datos tbody th { font-weight: 600; color: var(--navy-mid, #1a2e4d); }
+    .tabla-nota { font-family: var(--font-ui); font-size: 0.875rem; color: #6b7280; margin: -14px 0 26px; }
+    .custodia-pasos { font-family: var(--font-ui); color: var(--text-body); line-height: 1.65; padding-left: 22px; margin: 18px 0 8px; }
+    .custodia-pasos li { margin-bottom: 10px; }
+
     .breadcrumb-list .sep {
       color: #6b7280 !important;
     }
@@ -2300,6 +2321,8 @@
               <li><a href="#por-que-elegirnos">Abogado matrimonialista en Granada</a></li>
               <li><a href="#servicios-familia">Divorcios, custodias y pensiones</a></li>
               <li><a href="#divorcio">Divorcio de mutuo acuerdo o contencioso</a></li>
+              <li><a href="#custodia-paso-a-paso">Cómo se pide la custodia, paso a paso</a></li>
+              <li><a href="#coste-divorcio">Cuánto cuesta un divorcio</a></li>
               <li><a href="#servicios-relacionados">Otras materias relacionadas</a></li>
               <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
             </ol>
@@ -2512,12 +2535,40 @@
                 <li>Reparto de los bienes y gananciales sin salir perjudicado</li>
                 <li>Recurso ante la Audiencia Provincial si la sentencia no le es favorable</li>
               </ul>
-              <div class="card-price">Presupuesto cerrado <span>(según complejidad del caso)</span></div>
+              <div class="card-price">Desde 2.500 € + IVA <span>(presupuesto cerrado según el caso; procurador aparte)</span></div>
             </div>
           </div>
         
           <p class="cta-linea">¿No sabe qué camino le conviene? <a href="tel:+34958194663">Llame al 958 19 46 63</a>: la
             valoración telefónica es gratuita.</p>
+          <div style="background:var(--cream); border-radius:var(--radius-md); padding:30px 28px; margin-top:56px; border:1px solid var(--gray-200);">
+          <h2 class="section-title" id="custodia-paso-a-paso" style="margin-top:0;">Cómo se pide la custodia de un hijo en Granada, paso a paso</h2>
+          <ol class="custodia-pasos" style="margin-bottom:0;">
+            <li><strong>Elegir el procedimiento.</strong> Si están casados, la custodia se pide en el divorcio o la separación; si no lo están, en un procedimiento de medidas paternofiliales; si ya hay sentencia, con una modificación de medidas.</li>
+            <li><strong>Intentar antes un acuerdo.</strong> La <a class="fuente-boe" href="https://www.boe.es/eli/es/lo/2025/01/02/1/con" rel="noopener nofollow" target="_blank">Ley Orgánica 1/2025</a> exige un intento de negociación antes de demandar, salvo urgencia o violencia.</li>
+            <li><strong>Presentar la demanda en los Juzgados de Familia de Granada (La Caleta)</strong>, con un plan de parentalidad concreto: horarios, colegio, vivienda y quién recoge a los niños. Si hay urgencia, se piden medidas provisionales o las del <a class="fuente-boe" href="https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#a158" rel="noopener nofollow" target="_blank">art. 158 del Código Civil</a>.</li>
+            <li><strong>La prueba.</strong> Suele haber un informe del equipo psicosocial del juzgado, que las familias no pagan, y, si conviene, un perito privado. El juez escucha a los hijos con madurez suficiente, que se presume a partir de los 12 años (<a class="fuente-boe" href="https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763#a92" rel="noopener nofollow" target="_blank">art. 92 CC</a>).</li>
+            <li><strong>La sentencia</strong>, que puede recurrirse ante la Audiencia Provincial de Granada.</li>
+          </ol>
+          </div>
+          <h2 class="section-title" id="coste-divorcio" style="margin-top:56px;">¿Cuánto cuesta un divorcio en Granada?</h2>
+          <p style="font-family:var(--font-ui);color:var(--text-body);">Estos son todos los gastos de un divorcio o de un procedimiento de custodia, con quién los cobra:</p>
+          <p class="tabla-titulo">Gastos de un divorcio o una custodia en Granada</p>
+          <div class="tabla-datos-wrap">
+            <table aria-label="Gastos de un divorcio o una custodia en Granada" class="tabla-datos">
+              <thead><tr><th scope="col">Gasto</th><th scope="col">Quién lo cobra</th><th scope="col">Cuánto</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Divorcio de mutuo acuerdo (convenio regulador incluido)</th><td>El despacho</td><td><strong>1.500 € (IVA incluido)</strong>, con un solo abogado para los dos</td></tr>
+                <tr><th scope="row">Divorcio contencioso</th><td>El despacho</td><td><strong>Desde 2.500 € + IVA</strong>. Presupuesto cerrado por escrito tras el estudio</td></tr>
+                <tr><th scope="row">Custodia: medidas paternofiliales o modificación de medidas</th><td>El despacho</td><td><strong>Desde 2.500 € + IVA</strong></td></tr>
+                <tr><th scope="row">Consulta de estudio</th><td>El despacho</td><td>100 € + IVA, que se descuentan si encarga el asunto. La valoración por teléfono es gratuita</td></tr>
+                <tr><th scope="row">Procurador (si el divorcio va al juzgado)</th><td>Procurador</td><td>Aparte, según su arancel; en el mutuo acuerdo puede ser uno para los dos</td></tr>
+                <tr><th scope="row">Escritura de divorcio ante notario (sin hijos menores)</th><td>Notaría</td><td>Según el arancel notarial</td></tr>
+                <tr><th scope="row">Tasas judiciales</th><td>—</td><td>No se pagan: los particulares están exentos</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="tabla-nota">«+ IVA» significa que hay que sumar el 21 %. No están incluidos los peritos, las tasaciones ni los recursos ante la Audiencia Provincial, que se presupuestan aparte.</p>
           <div style="padding-bottom:28px;">
             <h3 style="margin:96px 0 10px;">Abogado de familia en el Zaidín (Granada · CP 18007)</h3>
             <p style="font-family:var(--font-ui);color:var(--text-muted);margin-bottom:0;">El despacho atiende en <strong>C. Torre de Machuca, 4, Local 1, Zaidín, 18007 Granada</strong>, junto al Palacio de Deportes y el Estadio Nuevo Los Cármenes. Un divorcio o una custodia se preparan con calma y en privado: podrá acudir a consulta con fácil aparcamiento y <strong>sin entrar en la Zona de Bajas Emisiones (ZBE) del centro</strong>, desde Armilla, Ogíjares, La Zubia, Huétor Vega y toda el área metropolitana. Los procedimientos se siguen ante los <strong>Juzgados de Familia de Granada, en el edificio judicial de La Caleta</strong>, y los recursos, ante la Audiencia Provincial.</p>
@@ -2533,7 +2584,7 @@
               Juzgados de Familia y de Primera Instancia de Granada. Dirige personalmente los procedimientos de esta
               materia. Puede comprobar su colegiación buscando su nombre en el <a class="enlace-tema"
                 href="https://icagr.es/directorio" target="_blank" rel="noopener">directorio de colegiados del Ilustre
-                Colegio de Abogados de Granada</a>. · <span>Última actualización: <time datetime="2026-11-20">20 de noviembre de 2026</time></span></p>
+                Colegio de Abogados de Granada</a>. · <span>Última actualización: <time datetime="2026-11-21">21 de noviembre de 2026</time></span></p>
           </div>
         </section>
       </div>
@@ -2598,7 +2649,7 @@
                 class="faq-chevron">▼</span></summary>
             <div class="faq-body">
               <p>Depende de si hay acuerdo. En un <strong>divorcio de mutuo acuerdo</strong>, los honorarios del abogado son <strong>1.500 € (IVA incluido)</strong> por toda la tramitación, con un solo abogado para los dos. El <strong>procurador</strong>, obligatorio ante el juzgado, se paga aparte según su arancel —también puede ser uno para los dos— y se le indicará su importe antes de empezar. Lo que no tendrá que pagar son <strong>tasas judiciales</strong>: los particulares están exentos.</p>
-              <p>En un <strong>divorcio contencioso</strong> el precio depende de lo que se discuta —custodia, vivienda, peritos, recursos— y cada parte necesita su propio abogado y procurador. En los dos casos recibirá un <strong>presupuesto cerrado por escrito</strong> antes de empezar, sin sorpresas al final. Y tenga en cuenta que no es posible divorciarse sin abogado, ni siquiera ante notario. Tiene el detalle en el <a href="#divorcio">apartado de divorcio</a>.</p>
+              <p>En un <strong>divorcio contencioso</strong>, los honorarios parten de <strong>2.500 € + IVA</strong> y el presupuesto depende de lo que se discuta —custodia, vivienda, peritos, recursos—; cada parte necesita su propio abogado y procurador. En los dos casos recibirá un <strong>presupuesto cerrado por escrito</strong> antes de empezar, sin sorpresas al final. Y tenga en cuenta que no es posible divorciarse sin abogado, ni siquiera ante notario. Tiene el detalle en el <a href="#divorcio">apartado de divorcio</a>.</p>
             </div>
           </details>
           <details class="faq-item">
@@ -2628,6 +2679,13 @@
                 class="faq-chevron">▼</span></summary>
             <div class="faq-body">
               <p>Ni la madre ni el padre tienen preferencia por serlo. Hoy los tribunales consideran la <strong>custodia compartida</strong> el régimen normal, salvo que perjudique al menor; si no encaja, se da la <strong>exclusiva</strong> a uno y el otro tiene un régimen de visitas. El juez se fija en lo práctico: quién se ha ocupado de los niños hasta ahora, los horarios de cada uno y la distancia entre las casas y el colegio. Un plan de parentalidad concreto y realista es lo que más pesa.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cómo pido la custodia de mi hijo en Granada?<span aria-hidden="true"
+                class="faq-chevron">▼</span></summary>
+            <div class="faq-body">
+              <p>Depende de su situación: si está casado, se pide en el divorcio o la separación; si no, en un procedimiento de <strong>medidas paternofiliales</strong>, y si ya hay sentencia, con una <strong>modificación de medidas</strong>. Antes hay que intentar un acuerdo, salvo urgencia o violencia. Después, la demanda se presenta en los <strong>Juzgados de Familia de Granada (La Caleta)</strong> con un plan de parentalidad, y el juez decide tras el informe del equipo psicosocial y, si procede, tras escuchar a los hijos. Los honorarios parten de <strong>2.500 € + IVA</strong>, con presupuesto cerrado por escrito.</p>
             </div>
           </details>
           <details class="faq-item">

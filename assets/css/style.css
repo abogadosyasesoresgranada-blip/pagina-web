@@ -62,6 +62,14 @@ body { padding-bottom: 0; }
     padding: 6px 0;
     font-size: 12px;
     line-height: 1.2;
+    /* Teléfono y WhatsApp siempre a la vista desde 768 px (en móvil está la barra inferior) */
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+/* Que los enlaces del índice no queden tapados por la barra fija */
+@media (min-width: 768px) {
+    html { scroll-padding-top: 56px; }
 }
 
 /* ==========================================================================
@@ -1018,6 +1026,10 @@ a { font-size: inherit; }
 html, body {
     max-width: 100% !important;
     overflow-x: hidden !important;
+    /* «clip» corta igual el desbordamiento lateral, pero sin convertir body en contenedor
+       de scroll: con «hidden» la barra superior fija (position: sticky) no se quedaría arriba.
+       Los navegadores antiguos que no lo entienden se quedan con «hidden». */
+    overflow-x: clip !important;
     width: 100% !important;
     margin: 0;
     padding: 0;

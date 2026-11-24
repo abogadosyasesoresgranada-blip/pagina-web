@@ -54,6 +54,10 @@ h1,h2,h3,h4{font-family:var(--font-display);color:var(--navy);line-height:1.2}
 .content-col h3{font-size:1.18rem;margin-top:1.6rem;margin-bottom:.6rem;color:var(--navy-mid)}
 .content-col ul,.content-col ol{padding-left:1.3rem}
 .content-col li{margin-bottom:.45rem}
+.content-col>p:not(.intro-copy),.content-col>ul,.content-col>ol{margin-bottom:1.1rem}
+.content-col>ul>li{list-style:disc outside}
+.content-col>ol>li{list-style:decimal outside}
+.content-col>ul>li::marker,.content-col>ol>li::marker{color:#806018;font-weight:700}
 .intro-copy{font-size:1.02rem;line-height:1.8;color:var(--text-body);border-left:3px solid var(--gold);padding-left:20px;margin-bottom:2rem}
 
 /* Respuesta rápida */

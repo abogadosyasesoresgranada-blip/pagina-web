@@ -104,7 +104,9 @@ for my $s (@pub) {
   my ($land) = $t =~ m{Más información[^<]*<a class="enlace-tema" href="/([^"/]+\.html)"};
   push @avisos, "$s: no indica página de servicio («Más información…»)" unless $land;
   push @avisos, "$s: el título lleva raya (—)" if $h1 =~ /—/;
-  $meta{$s} = { h1 => $h1, desc => $desc, sec => $sec // 'Blog', land => $land, n => scalar @faq };
+  # Texto opcional del enlace en la página de servicio (si no, el H1)
+  my ($ancla) = $t =~ m{<meta content="([^"]*)" name="blog:ancla-servicio"/>};
+  $meta{$s} = { h1 => $h1, desc => $desc, sec => $sec // 'Blog', land => $land, ancla => $ancla // $h1, n => scalar @faq };
   print "blog/$s.html", (escribir("$ROOT/blog/$s.html", $t) ? ' (actualizado)' : ''), "\n";
 }
 mkdir "$ROOT/blog" unless -d "$ROOT/blog";
@@ -153,7 +155,7 @@ for my $f (glob "$ROOT/*.html") {
   $t = pie($t);
   $t =~ s{\n?<!-- blog:inicio -->.*?<!-- blog:fin -->}{}s;
   if (my $arts = $por_land{$base}) {
-    my $li = join '', map { qq{<li style="margin-bottom:8px"><a class="enlace-tema" href="/blog/$_.html">$meta{$_}{h1}</a></li>} } @$arts;
+    my $li = join '', map { qq{<li style="margin-bottom:8px"><a class="enlace-tema" href="/blog/$_.html">$meta{$_}{ancla}</a></li>} } @$arts;
     my $blk = qq{\n<!-- blog:inicio --><section aria-labelledby="articulos-blog-titulo" class="section-rh" id="articulos-blog" style="padding:8px 0 48px"><div class="container-rh"><h2 id="articulos-blog-titulo" style="text-align:center">Artículos del blog sobre este tema</h2><ul style="max-width:760px;margin:18px auto 0;padding-left:1.2rem;line-height:1.6">$li</ul><p style="text-align:center;margin-top:14px"><a class="enlace-tema" href="/blog/">Ver todos los artículos del blog jurídico</a></p></div></section><!-- blog:fin -->};
     $t =~ s{(id="servicios-relacionados".*?</section>)}{$1$blk}s or push @avisos, "$base: sin sección servicios-relacionados, no se ha añadido el bloque del blog";
   }

@@ -10,7 +10,7 @@
 | Dato | Valor |
 |---|---|
 | Marca | **Robledillo & Herrera Abogados** (marca antigua: «F&F Abogados», web WordPress en Avda. de la Constitución) |
-| Letrado | **Fernando José Robledillo Melguizo** — colegiado n.º 6631 ICAGR, ejerciendo desde 31-10-2011 (+15 años, +1.000 procedimientos). Licenciado en Derecho (UGR). También Turno de Oficio y Asistencia al Detenido |
+| Letrado | **Fernando José Robledillo Melguizo** — colegiado n.º 6631 ICAGR, ejerciendo desde 31-10-2011 (+15 años, +1.500 procedimientos). Licenciado en Derecho (UGR). También Turno de Oficio y Asistencia al Detenido |
 | Estructura | **Unipersonal**: único abogado, sin pasantes ni sustituciones (argumento diferencial clave) |
 | Dirección | C. Torre de Machuca, 4, local 1 · Zaidín-Vergeles · 18007 Granada (junto a Palacio de Deportes, Nuevo Los Cármenes y PTS; fuera de la ZBE; Metro Palacio de Deportes 5 min, bus línea 8) |
 | Teléfono despacho | +34 958 19 46 63 (cita previa) |
